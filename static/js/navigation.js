@@ -4,6 +4,9 @@
     var hamburger = $('#mobile-nav > button');
     var links = $('#mobile-nav ul a');
     var langBtn = $('.langBtn')
+    var langText = $('#langMenuText')
+
+    langText.text(localStorage.getItem('language'))
 
     if (isDeviceIOS) {
         mobileNav.addClass('ios');
@@ -28,6 +31,7 @@
     langBtn.on('click', function(){
         var newLanguage = this.id;
         localStorage.setItem('language', newLanguage);
+        langText.text(newLanguage)
         goTo(window.location.pathname);
     });
 
