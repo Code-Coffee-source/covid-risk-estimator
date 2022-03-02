@@ -1,6 +1,7 @@
 (function() {
   var inputObj = $('input[name="chk[]"]');
   var consentBtn = $('#consent_btn');
+  var icfBtn = $('#icfBtn');
 
   inputObj.click(function() {
 

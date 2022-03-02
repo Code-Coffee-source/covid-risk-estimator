@@ -195,7 +195,7 @@ footer.bg-midnight-blue.mx-auto.flex.align-items-center.justify-center.text-whit
     .p-6.card.bordered
       .form-control
         label.cursor-pointer.label
-          span.label-text.w-80
+          span.label-text.w-80.text-lg
             span.english-text
               | I understand that the website is not a replacement for any medical advice, device, or help.
             span.filipino-text
@@ -204,7 +204,7 @@ footer.bg-midnight-blue.mx-auto.flex.align-items-center.justify-center.text-whit
     .p-6.card.bordered
       .form-control
         label.cursor-pointer.label
-          span.label-text.w-80
+          span.label-text.w-80.text-lg
             span.english-text
               | I understand that this website&rsquo;s purpose is for estimating the possible risk of my planned activity, and does not guarantee my safety.
             span.filipino-text
@@ -213,7 +213,7 @@ footer.bg-midnight-blue.mx-auto.flex.align-items-center.justify-center.text-whit
     .p-6.card.bordered
       .form-control
         label.cursor-pointer.label
-          span.label-text.w-80
+          span.label-text.w-80.text-lg
             span.english-text
               | I am 18 years old and older.
             span.filipino-text
@@ -222,7 +222,7 @@ footer.bg-midnight-blue.mx-auto.flex.align-items-center.justify-center.text-whit
     .p-6.card.bordered
       .form-control
         label.cursor-pointer.label
-          span.label-text.w-80
+          span.label-text.w-80.text-lg
             span.english-text
               | My planned activity is located in the Philippines.
             span.filipino-text
@@ -231,12 +231,18 @@ footer.bg-midnight-blue.mx-auto.flex.align-items-center.justify-center.text-whit
     .p-6.card.bordered
       .form-control
         label.cursor-pointer.label
-          span.label-text.w-80
+          span.label-text.w-80.text-lg
             span.english-text
               | I do not exhibit symptoms of COVID-19.
             span.filipino-text
               | Wala akong anumang sintomas ng COVID-19.
           input.checkbox(type='checkbox' name='chk[]')
+    .card.shadow
+      .card-body
+        a.btn(href="static/documents/AGALEPA_ICF.pdf" target="_blank" download="AGALEPA Informed Consent Form")
+            span Downloand Informed Consent Form
+
+
     .card.shadow
       .card-body
         p.english-text
