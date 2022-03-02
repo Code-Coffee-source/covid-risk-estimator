@@ -3,7 +3,6 @@ var isLoading = false; // this is used to prevent too many function calls when a
 var hasJavascript = false;
 var dataStore = {};
 var isDeviceIOS = false;
-var language = localStorage.getItem("language");
 
 // function to load and execute a javascript file
 // with the loadAjax function below, one can figure out
@@ -63,6 +62,7 @@ function goTo(path) {
     loadAjax(path, function() {
         history.pushState({}, document.title, path);
         bindSeamlessLinks();
+        var language = localStorage.getItem("language");
         language ? setLanguage(language) : setLanguage('english');
         $(window).off('scroll');
     });

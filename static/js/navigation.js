@@ -3,6 +3,7 @@
     var mobileNav = $('#mobile-nav');
     var hamburger = $('#mobile-nav > button');
     var links = $('#mobile-nav ul a');
+    var langBtn = $('.langBtn')
 
     if (isDeviceIOS) {
         mobileNav.addClass('ios');
@@ -23,4 +24,12 @@
             });
         });
     }
+
+    langBtn.on('click', function(){
+        var newLanguage = this.id;
+        localStorage.setItem('language', newLanguage);
+        goTo(window.location.pathname);
+    });
+
+
 })();

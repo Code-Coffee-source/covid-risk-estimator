@@ -1,0 +1,28 @@
+.text-404 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+
+
+@media (min-width: 1024px) {
+    .text-404 {
+        font-size: 3rem;
+        line-height: 1;
+    }
+
+    h1 {
+        font-size: 3.75rem;
+        line-height: 1;
+    }
+
+    .text-message {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+}
