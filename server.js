@@ -44,7 +44,7 @@ async function connectToAtlas(url) {
 // for page routes, /:page
 let titles = {
     'home': 'Welcome to ASPIRE',
-    'how-to-use': 'How to Use'
+    'how-to-use': 'How to Use',
 }
 
 // for /estimates/:key routes
@@ -107,7 +107,7 @@ app.get('/get-ajax-values', function(request, response) {
         // this gets the corresponding title and names of the url if it exists
         let title = lastItemInPath in titles ? titles[lastItemInPath] : null;
         let searchFor = lastItemInPath;
-        
+
         if (lastItemInPath in estimatesPage) {
             title = estimatesTitle[lastItemInPath];
             searchFor = estimatesPage[lastItemInPath];
@@ -117,27 +117,27 @@ app.get('/get-ajax-values', function(request, response) {
 
         let jsPath = `/static/js/${searchFor}.js`;
         let pugPath = `./views/content/${searchFor}.pug`;
-        
+
         // asynchronous to prevent blocking when there are multiple
         // clients requesting different stuff
         fs.readFile(pugPath, function(error, data) {
             if (error)  return response.send(JSON.stringify(values));
-            
+
             let content = pug.compile(data.toString('utf8'), {filename: pugPath})({ data: datapoints });
             values.content = content;
 
-            fs.access(`.${jsPath}`, function(error) { 
+            fs.access(`.${jsPath}`, function(error) {
                 values.javascript = error ? null : jsPath;
                 response.json(values);
             });
-            
+
         });
 
     } else {
         // obviously there is no url specified for the endpoint here
         response.json(values);
     }
-    
+
 });
 
 // this handles existing or should-be-existing pages
@@ -150,11 +150,12 @@ app.get(['/', '/:page', '/estimate/:key'], function(request, response) {
 
     let title = page in titles ? titles[page] : titles['home'];
     title = key in estimatesTitle ? estimatesTitle[key] : title;
-    
+
     if (title == titles['home'] && (page != 'home' || key)) {
         response.render('404');
+
     } else {
-        response.render('index.pug', { title, url: page, data: datapoints }); 
+    response.render('index.pug', { title, url: page, data: datapoints });
     }
 });
 
@@ -205,7 +206,7 @@ function isItNumber(string) {
 // in order to validate it
 function validateFields(object) {
     if (!findByProperty('activityLocation', 'Code', object['region-code']) ) return false;
-    
+
     if (!findByProperty('activityPlanned', 'Code', object['activity-planned-code']) ) {
         let customActivityLevelCode = object['activity-level-code'];
         let [activityLevel, activityLevelClass] = customActivityLevelCode.split(' ');
@@ -217,7 +218,7 @@ function validateFields(object) {
                 return false;
         }
     }
-    
+
     if (!isItNumber(object['time-value']) || !isItNumber(object['people-count']) || !isItNumber(object['mask-percentage']) ) return false;
     if (!findByProperty('maskTypes', 'Code', object['mask-code'])) return false
 
@@ -228,7 +229,7 @@ function validateFields(object) {
 app.post('/post-result', async function(request, response) {
     response.setHeader('content-type', 'application/json');
     response.set('Cache-Control', 'no-store');
-    let { body } = request; 
+    let { body } = request;
 
     // in case the user somehow sends invalid values
     if (!validateFields(body)) return response.status(400).json({ error: 'Invalid form fields' });
@@ -247,7 +248,7 @@ app.post('/post-result', async function(request, response) {
 
     // can be computed directly from body
     let eventDuration = parseInt(body['time-value']) * (body['time-unit'] == 'hours' ? 60 : 1);
-    
+
     let exhalationMaskEfficiency;
     let floorArea;
 
@@ -266,7 +267,7 @@ app.post('/post-result', async function(request, response) {
     let quantaExhalationRate;
     let roomHeight;
     let roomVolume;
-    let occupantDensity; 
+    let occupantDensity;
 
     // default value
     let virusDeposition = 0.3;
@@ -274,18 +275,18 @@ app.post('/post-result', async function(request, response) {
     // this is just es6 destructuring
     ({ 'Population': population, 'Cases': cases } = findByProperty('activityLocation', 'Code', body['region-code']));
 
-    ({ 
-        'InhalationMaskEfficiency': inhalationMaskEfficiency, 
-        'ExhalationMaskEfficiency': exhalationMaskEfficiency 
+    ({
+        'InhalationMaskEfficiency': inhalationMaskEfficiency,
+        'ExhalationMaskEfficiency': exhalationMaskEfficiency
     } = findByProperty('maskTypes', 'Code', body['mask-code']));
 
     if (!isCustom) {
          ({
-             'Area Outdoor Air Rate': areaOutdoorRate, 
-             'People Outdoor Air Rate' : peopleOutdoorRate, 
+             'Area Outdoor Air Rate': areaOutdoorRate,
+             'People Outdoor Air Rate' : peopleOutdoorRate,
              'Occupant Density' : occupantDensity
          } = findByProperty('ventilationRates', 'Code', body['activity-planned-code']));
-        
+
         ({
             'Floor Area': floorArea,
             'Room Height': roomHeight
@@ -297,14 +298,14 @@ app.post('/post-result', async function(request, response) {
         roomVolume = parseFloat(floorArea) * parseFloat(roomHeight);
     } else {
         ({
-             'Area Outdoor Air Rate': areaOutdoorRate, 
-             'People Outdoor Air Rate' : peopleOutdoorRate, 
+             'Area Outdoor Air Rate': areaOutdoorRate,
+             'People Outdoor Air Rate' : peopleOutdoorRate,
              'Occupant Density' : occupantDensity
          } = findByProperty('ventilationRates', 'Code', body['room-ventilation-code']));
 
         let activityLevelClassKeys = { 'OB': 'Oral breathing', 'S': 'Speaking', 'LS': 'Loudly speaking' };
         let [activityLevel, activityLevelClass] = body['activity-level-code'].split(' ');
-        
+
         let activityLevelEntry = findByProperty('activityLevels', 'Code', activityLevel);
         breathingRate = activityLevelEntry[activityLevelClassKeys[activityLevelClass]];
         quantaExhalationRate = activityLevelEntry['QuantaExhalationRate'];
@@ -314,7 +315,7 @@ app.post('/post-result', async function(request, response) {
     }
 
     // uncomment for easy logging
-    // console.log({areaOutdoorRate, breathingRate, cases, controlMeasure, decayRate, eventDuration, exhalationMaskEfficiency, floorArea, fractionImmune, infectivePeople, inhalationMaskEfficiency, numberOfPeople, occupantDensity, peopleOutdoorRate, peopleWithMask, population, quantaExhalationRate, roomVolume, virusDeposition});      
+    // console.log({areaOutdoorRate, breathingRate, cases, controlMeasure, decayRate, eventDuration, exhalationMaskEfficiency, floorArea, fractionImmune, infectivePeople, inhalationMaskEfficiency, numberOfPeople, occupantDensity, peopleOutdoorRate, peopleWithMask, population, quantaExhalationRate, roomVolume, virusDeposition});
     let probabilityInfectionValue = probabilityInfection(areaOutdoorRate, breathingRate, cases, controlMeasure, decayRate, eventDuration, exhalationMaskEfficiency, floorArea, fractionImmune, infectivePeople, inhalationMaskEfficiency, numberOfPeople, occupantDensity, peopleOutdoorRate, peopleWithMask, population, quantaExhalationRate, roomVolume, virusDeposition);
     let clampedProbabilityInfectionValue = Math.min(Math.max(probabilityInfectionValue, 0), 1); // limit probability infection value from 0 to 1
 
@@ -325,10 +326,10 @@ app.post('/post-result', async function(request, response) {
     });
 
     // send these values to the client
-    response.json({ 
-                    name: result['Name'], 
-                    description: result['Desc'], 
-                    code: result['Code'], 
+    response.json({
+                    name: result['Name'],
+                    description: result['Desc'],
+                    code: result['Code'],
                     probabilityInfectionValue,
                     clampedProbabilityInfectionValue
                   });
@@ -340,7 +341,7 @@ app.post('/post-result', async function(request, response) {
     log.createdAt = new Date().toUTCString();
     log.userAgent = request.useragent;
 
-    // x: wow this is so damn long 
+    // x: wow this is so damn long
     // y: that's what she said
     log.computation = { areaOutdoorRate, breathingRate, cases, controlMeasure, decayRate, eventDuration, exhalationMaskEfficiency, floorArea, fractionImmune, infectivePeople, inhalationMaskEfficiency, numberOfPeople, occupantDensity, peopleOutdoorRate, peopleWithMask, population, quantaExhalationRate, roomVolume, virusDeposition, probabilityInfectionValue, clampedProbabilityInfectionValue };
     if (logServerComputation) console.log(log);
@@ -368,4 +369,3 @@ app.get('*', function(request, response) {
 app.listen(port, function() {
     console.log(`Server now running at PORT: ${port}`);
 });
-

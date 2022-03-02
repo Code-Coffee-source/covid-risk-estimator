@@ -11,17 +11,19 @@
             | Planuhin ang iyong mga aktibidad alang-alang sa kaligtasan at alamin kung gaano kahalaga ang bawat desisyon upang maging ligtas sa COVID-19.
 
       .flex.flex-col.text-center.text-white.text-xs.font-black.tracking-widest2x.mt-5(class='sm:text-s md:text-base lg:text-lg md:pr-16')
-        a.bg-gold.my-2.py-3.rounded-full.shadow-lg(href='#consent_modal' class='md:py-5')
-          span.english-text
-            | GET STARTED
-          span.filipino-text
-            | MAGSIMULA
+          a.bg-midnight-blue.my-2.py-3.rounded-full.shadow-lg(href="/how-to-use" class='md:py-5')
+            span.english-text
+                | HOW TO USE
+            span.filipino-text
+                | PAANO GAMITIN
 
-        a.bg-midnight-blue.my-2.py-3.rounded-full.shadow-lg(href="/how-to-use" class='md:py-5')
-          span.english-text
-            | HOW TO USE
-          span.filipino-text
-            | PAANO GAMITIN
+          a.bg-gold.my-2.py-3.rounded-full.shadow-lg(href='#consent_modal' class='md:py-5')
+            span.english-text
+                | GET STARTED
+            span.filipino-text
+                | MAGSIMULA
+
+
 
     img(src="static/images/Home_Illus_Above.svg" class='lg:max-w-3xl xl:max-w-5xl')
 
@@ -166,6 +168,26 @@ section.bg-sky-blue.mx-auto.flex.align-items-center.justify-center(class='md:py-
                 h4.text-base(class='md:text-lg xl:text-xl')
                     a(class='hover:underline')
                         | maveron_aguares@dlsu.edu.ph
+
+footer.bg-midnight-blue.mx-auto.flex.align-items-center.justify-center.text-white(class='md:py-10')
+
+    .container.grid.grid-cols-1.gap-5.py-10(class='md:grid-cols-2 lg:grid-cols-4')
+
+        div.flex.flex-col.font-bold
+            span Aspire
+            span &#169; 2021
+
+        div.flex.flex-col.font-bold
+            span Icons by Icons8 and FontAwesome
+            span Illustrations by Freepik
+
+        div.flex.flex-col
+            span.font-bold Thanks to Jimenez and Peng
+            span who created the estimator model
+
+        div.flex.flex-col
+            span.font-bold Thanks to Mr. Ralph Louis Gopez
+            span who fixed major technical issues in the website and assisted in its development
 
 
 #consent_modal.modal
