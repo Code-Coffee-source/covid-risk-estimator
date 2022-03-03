@@ -49,6 +49,14 @@ a.link-btn {
   display: unset;
 }
 
+.w-half {
+    width: 50%;
+}
+
+.overflow-scroll {
+    overflow: scroll;
+}
+
 /* This is the zoom hack */
 html {
     zoom: 100%;

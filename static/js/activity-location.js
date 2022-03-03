@@ -1,13 +1,14 @@
 (function() {
     setupNextBackButtons();
 
-    // dropdowns don't work on iOS due to :focus selector or some pseudo-selectors not working 
+    // dropdowns don't work on iOS due to :focus selector or some pseudo-selectors not working
     var dropdown = $('.dropdown');
     var dropdownButton = $('.dropdown > button');
 
     var regionImage = $('#region-image');
     var regionChoice = $('.region-choice');
     var regionButton = $('#regionBtn');
+    var regionHeader = $('#region-header')
 
     var currentRegionName = getAnswer('region-name');
     var currentRegionCode = getAnswer('region-code');
@@ -16,13 +17,16 @@
         $(this).find('button').click(function(event) {
 
             var regionCode = $(this).find('button').attr('data-code');
-            
+
             storeAnswer('region-name', event.target.innerText);
             storeAnswer('region-code', regionCode);
 
             regionImage.attr('src', '/static/images/philippines/PH_' + regionCode + '.png');
             regionButton.find('span').text(event.target.innerText);
-            
+            regionHeader.html(event.target.innerText);
+
+            console.log(event.target.innerText)
+
             if (isDeviceIOS) {
                 dropdown.removeClass('active');
             } else {
