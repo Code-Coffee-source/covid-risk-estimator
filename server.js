@@ -45,6 +45,7 @@ async function connectToAtlas(url) {
 let titles = {
     'home': 'Welcome to ASPIRE',
     'how-to-use': 'How to Use',
+    'how-it-works': 'How it Works',
 }
 
 // for /estimates/:key routes

@@ -1,0 +1,18 @@
+.link-btn {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.75rem; /* 28px */
+    width: 18rem; /* 288px */
+    border-radius: 9999px;
+    text-align: center;
+    padding-top: 1rem; /* 16px */
+    padding-bottom: 1rem; /* 16px */
+    transition: all 0.1s linear;
+}
+
+.link-btn:hover:not(.cursor-not-allowed) {
+    filter: brightness(95%);
+}
+
+.link-btn:active:not(.cursor-not-allowed) {
+    transform: scale(90%)
+}

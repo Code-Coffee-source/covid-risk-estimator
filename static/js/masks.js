@@ -23,9 +23,15 @@
 
     maskSlider.on('input', function() {
         let percentage = $(this).val() + '%';
-        maskSliderValue.text(percentage);
+        maskSliderValue.val(percentage);
         storeAnswer('mask-percentage', percentage);
         if (checkIfDone()) allowNextButton();
+    });
+
+    maskSliderValue.change(function() {
+        let percentage = $(this).val();
+        maskSlider.val(percentage.replace('%', ''))
+
     });
 
     maskButtons.each(function() {

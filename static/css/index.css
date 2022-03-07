@@ -1,4 +1,4 @@
-
+@import './components/large_button.css';
 
 .mobile_menu {
   -webkit-transition: all 1s ease-in-out;
@@ -47,6 +47,14 @@ a.link-btn {
 
 .english-text.is-active, .filipino-text.is-active {
   display: unset;
+}
+
+.w-half {
+    width: 50%;
+}
+
+.overflow-scroll {
+    overflow: scroll;
 }
 
 /* This is the zoom hack */

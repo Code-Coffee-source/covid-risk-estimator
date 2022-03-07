@@ -16,7 +16,7 @@ block progress-bar
 block input
     section.space-y-3.px-0.font-sans
         .text-center.space-x-3
-            h1.text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  What is the planned activity? 
+            h1.text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  What is the planned activity?
     .text-center.my-3.justify-center.space-y-3.px-0(class='sm:h-136 md:h-136 md:px-20 lg:px-0')
         .grid.grid-cols-3.gap-x-6.gap-y-2.text-midnight-blue(class='sm:h-max-5 md:max-h-full md:h-full md:gap-x-3 md:gap-y-1')
             for activity in data.activityPlanned
@@ -24,7 +24,6 @@ block input
                     span
                         img.h-14.w-14.m-auto(class='md:w-16 md:h-16 xl:h-20 xl:w-20' src='/static/images/activity-planned/'+ activity['Code'] + '.svg' alt=activity['Name'])
                     span.leading-none.text-sm(class='md:text-normal xl:text-xl') #{activity['Name']}
-    a.link-btn.flex.w-full.text-lg.bg-dirty-white.rounded-full.text-center.font-black.p-4.cursor-pointer(href="/estimate/2.1" type='button')
-        span.w-full.text-center.font-midnight-blue Create Your Own 
-        object.h-8.w-8.absolute.self-center(data='/static/icons/Create.svg' type='image/svg+xml')
-
+    a.flex.w-full.text-lg.bg-dirty-white.rounded-full.text-center.font-black.p-4.cursor-pointer(href="/estimate/2.1" type='button')
+        span.w-full.text-center.font-midnight-blue Create Your Own
+        object.h-8.w-8.absolute.self-center(data='/static/icons/Create.svg' type='image/svg+xml' style="pointer-events: none;")

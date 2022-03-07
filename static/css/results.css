@@ -52,3 +52,26 @@
 .VHR_txt {
   color: #d67369;
 }
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-container > a {
+    margin-top: 1rem;
+}
+
+@media (min-width: 1024px) {
+
+    .btn-container {
+        flex-direction: row;
+    }
+
+    .btn-container > a {
+        margin-top: 0rem;
+    }
+
+}

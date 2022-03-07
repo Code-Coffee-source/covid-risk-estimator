@@ -14,22 +14,38 @@ block progress-bar
     +bars(1,5)
 
 block input
-    .flex.flex-col.text-center.space-y-7
-        .flex.justify-center.space-x-3
-            h1.text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  Where will the activity be? 
+    .flex.justify-center.space-x-3
+        h1.text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  Where will the activity be?
 
-        .relative.h-96.flex.justify-center(class='md:h-136')
-            img.absolute.h-full.mx-auto(src="/static/images/philippines/PH_All.png")
-            img#region-image.absolute.h-full.mx-auto
+    .flex.flex-col.justify-center.w-full
+        //-
+            .h-96.flex.justify-center.w-half.relative(class='md:h-136')
+                .relative
+                    .absolute
+                        img.h-full.mx-auto(src="/static/images/philippines/PH_All.png")
+                        img#region-image.h-full.mx-auto
 
+        //-
+            .form-control.border
+                label.label
+                    span.label-text Look for your region
+                input.input.input-bordered.w-full.max-w-xs(type='text' placeholder='Type here')
+
+
+        h1#region-header.text-midnight-blue.text-center.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  No Region Selected
+
+        ul.p-2.shadow.bg-base-100.rounded-box.w-full.overflow-scroll(tabindex='0' id='region-list' style="height: 40rem; overflow-x: hidden;")
+            for regionChoice in data.activityLocation
+                li.text-center(class='region-choice' style="border-bottom-width: 1px;")
+
+                    button.btn.btn-ghost.w-full.regions_menu_item.px-4.py-2.text-lg.capitalize.cursor-pointer.h-auto(class='hover:bg-dirty-white' role='regions_menu_item' data-code=regionChoice['Code']) #{regionChoice['Region Name']}
+
+
+
+    //-
         .relative.text-left.flex-grow
-            .flex.justify-center.items-center
-                .dropdown.dropdown-top.dropdown-end.capitalize
-                    button#regionBtn.btn-lg.bg-gold.w-72.capitalize.text-xl.text-white.rounded-full.outline-none.flex.justify-between.items-center.px-10.cursor-pointer(tabindex='0' class='md:w-96')
-                        span Select Your Region
-                        i.fas.fa-chevron-down
-
-                    ul.p-2.shadow.menu.dropdown-content.bg-base-100.rounded-box.w-full(tabindex='0' id='region-list')
-                        for regionChoice in data.activityLocation
-                            li(class='region-choice')
-                                button.btn.btn-ghost.regions_menu_item.px-4.py-2.text-lg.capitalize.cursor-pointer(class='hover:bg-dirty-white' role='regions_menu_item' data-code=regionChoice['Code']) #{regionChoice['Region Name']}
+        .flex.justify-center.items-center
+            .dropdown.dropdown-top.dropdown-end.capitalize
+                button#regionBtn.btn-lg.bg-gold.w-72.capitalize.text-xl.text-white.rounded-full.outline-none.flex.justify-between.items-center.px-10.cursor-pointer(tabindex='0' class='md:w-96')
+                    span Select Your Region
+                    i.fas.fa-chevron-down

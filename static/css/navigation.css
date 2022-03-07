@@ -21,6 +21,10 @@
     display: none;
 }
 
+.menu-item:active {
+    background-color: #337970;
+}
+
 @media (min-width: 1024px) {
     .desktop-menu {
         display: flex;

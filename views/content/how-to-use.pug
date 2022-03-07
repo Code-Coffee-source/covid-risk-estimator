@@ -1,39 +1,83 @@
-.flex.justify-center.items-center.px-0.space-y-2
-  .hero
-    .text-center.hero-content
-      .max-w-md
-        h1.mb-5.text-5xl.font-bold
-          | How to use ASPIRE
-          // add background
+include ./content-mixins.pug
 
-// turn into carousel
-// image border
-// add mobile view for how to use
 .flex.flex-col.justify-center.items-center.px-20.font-sans.text-midnight-blue.pb-5.space-y-10(class='md:px-72 lg:px-96')
-  .card.card-bordered.shadow
-    figure.px-10.pt-10
-      img.rounded-xl(src="/static/images/screenshots/homepage (screenshot 1).png")
-    .card-body
-      h2.card-title
-        | Select the “Get Started” button to begin the estimation process.
-  .card.card-bordered.shadow
-    figure.px-10.pt-10
-      img.rounded-xl(src="/static/images/screenshots/consent (screenshot 2).png")
-    .card-body
-      h2.card-title
-        | You will first be met with a checklist before starting the estimation. Check the boxes once the conditions are met.
-  .card.card-bordered.shadow
-    figure.px-10.pt-10
-      img.rounded-xl(src="/static/images/screenshots/progress (screenshot 3).png")
-    .card-body
-      h2.card-title
-        | Estimating your risk will be done in only 5 steps. The progress bar will indicate which step you are in.
-  .card.card-bordered.shadow
-    figure.px-10.pt-10
-      img.rounded-xl(src="/static/images/screenshots/location (screenshot 4).png")
-    .card-body
-      h2.card-title
-        | Step 1 is the activity location. Choose from the dropdown box what region the activity will take place.
+
+    .w-full.carousel
+
+        +carousel_item( "item_1",
+                        "1. Select the “Get Started” button to begin the estimation process.",
+                        "1. Maglagay ng translasyon dito",
+                        "/static/images/screenshots/homepage (screenshot 1).png")
+
+        +carousel_item( "item_2",
+                        "2. You will first be met with a checklist before starting the estimation. Check the boxes once the conditions are met.",
+                        "2. Maglagay ng translasyon dito",
+                        "/static/images/screenshots/consent (screenshot 2).png")
+
+        +carousel_item( "item_3",
+                        "3. Estimating your risk will be done in only 5 steps. The progress bar will indicate which step you are in.",
+                        "3. Maglagay ng translasyon dito",
+                        "/static/images/screenshots/progress (screenshot 3).png")
+
+        +carousel_item( "item_4",
+                        "4. Step 1 is the activity location. Choose from the dropdown box what region the activity will take place.",
+                        "4. Maglagay ng translasyon dito",
+                        "/static/images/screenshots/location (screenshot 4).png")
+
+        +carousel_item( "item_5",
+                        "5. Step 2 is the activity planned. Select from the choices of your planned activity during the pandemic.",
+                        "5. Maglagay ng translasyon dito",
+                        "/static/images/screenshots/planned activity (screenshot 5).png")
+
+        +carousel_item( "item_6",
+                        "6. Step 3 is the time and people. Enter the appropriate values in the input fields.",
+                        "6. Maglagay ng translasyon dito",
+                        "/static/images/screenshots/time and people (screenshot 8).png")
+
+        +carousel_item( "item_7",
+                        "7. Step 4 is the masks. Drag the slider to adjust the amount of people wearing masks and choose the type of mask they wear.",
+                        "7. Maglagay ng translasyon dito",
+                        "/static/images/screenshots/masks (screenshot 9).png")
+
+        +carousel_item( "item_8",
+                        "8.  A summary is shown before the results. You may take this time to review and edit your results.",
+                        "8. Maglagay ng translasyon dito",
+                        "/static/images/screenshots/summary (screenshot 10).png")
+
+        +carousel_item( "item_9",
+                        "9. Step 5 is the result. You are finally done!",
+                        "9. Maglagay ng translasyon dito",
+                        "/static/images/screenshots/results (screenshot 11).png")
+
+        +carousel_item( "item_10",
+                        "10. Step 5 is the result. You are finally done!",
+                        "10. Maglagay ng translasyon dito",
+                        "/static/images/screenshots/new risk level (screenshot 12).png")
+
+
+
+    .flex.justify-center.w-full.py-2.gap-5
+
+        a#start-btn.btn.btn-xs.btn-ghost.text-lg(href='#item_1')
+            i.fas.fa-angle-double-left.fa-2x
+
+        a#back-btn.btn.btn-xs.btn-ghost.text-lg(href='#item_1')
+            i.fas.fa-angle-left.fa-2x
+
+        a.btn#num-btn.btn-xs.btn-ghost.text-lg 1
+
+        a#next-btn.btn.btn-xs.btn-ghost.text-lg(href='#item_2')
+            i.fas.fa-angle-right.fa-2x
+
+        a#end-btn.btn.btn-xs.btn-ghost.text-lg(href='#item_10')
+            i.fas.fa-angle-double-right.fa-2x
+
+
+
+//-
+    .flex.flex-col.justify-center.items-center.px-20.font-sans.text-midnight-blue.pb-5.space-y-10(class='md:px-72 lg:px-96')
+
+
   .card.card-bordered.shadow
     figure.px-10.pt-10
       img.rounded-xl(src="/static/images/screenshots/planned activity (screenshot 5).png")
@@ -74,6 +118,7 @@
               .card-body
                 h2.card-title.text-midnight-blue
                   | Step 2.3 is the room size. Enter the appropriate values in the input field.
+
   .card.card-bordered.shadow
     figure.px-10.pt-10
       img.rounded-xl(src="/static/images/screenshots/time and people (screenshot 8).png")

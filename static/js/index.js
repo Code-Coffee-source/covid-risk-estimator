@@ -233,5 +233,22 @@ function bindToTopScroll() {
     });
 }
 
+function setActiveCard(cardId) {
+
+    var cardIcons = $('.card-icon');
+    var activeCard = $("#"+cardId);
+
+    cardIcons.each(function() {
+        if (this.id != cardId) {
+            $(this).addClass('hidden');
+        } else {
+            $(this).removeClass('hidden');
+        }
+    });
+
+
+
+}
+
 bindSeamlessLinks();
 goTo(window.location.pathname); // this is to make the page load the javascript files also loads the right page

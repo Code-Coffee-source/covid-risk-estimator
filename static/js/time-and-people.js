@@ -15,7 +15,7 @@
     function setActiveButton(id) {
         unitButtons.each(function() {
             var button = $(this);
-            if (button.attr('id') == id) { 
+            if (button.attr('id') == id) {
                 button.removeClass('inactive').addClass('active');
                 button.removeClass('bg-transparent').addClass('bg-dirty-white');
                 button.removeClass('text-gray-400').addClass('text-midnight-blue');
@@ -37,11 +37,12 @@
             setActiveButton($(this).attr('id'));
             if (checkIfDone()) allowNextButton();
         }.bind(this));
-    });    
+    });
 
     timeInput.change(function(event) {
         storeAnswer('time-value', this.val());
         if (checkIfDone()) allowNextButton();
+        peopleInput.focus();
     }.bind(timeInput));
 
     peopleInput.change(function(event) {
@@ -54,10 +55,9 @@
     } else {
         // default answer
         setActiveButton('hrsBtn');
-        storeAnswer('time-unit', 'hours'); 
+        storeAnswer('time-unit', 'hours');
     }
     if (timeValueAnswer) timeInput.val(timeValueAnswer);
     if (peopleCountAnswer) peopleInput.val(peopleCountAnswer);
     if (checkIfDone()) allowNextButton();
 })();
-
