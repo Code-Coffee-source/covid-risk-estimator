@@ -19,6 +19,8 @@
             storeAnswer('activity-level-name', this.dataset.name);
             storeAnswer('activity-level-code', this.dataset.code);
             setActiveByElement($(this));
+            setActiveCard('title' + this.dataset.index);
+
         }.bind(this));
     });
 
@@ -28,7 +30,7 @@
             if (currentButton.attr('data-code') == activityLevelCode) {
                 setActiveByElement(currentButton);
                 disablePageInteractivity(); //scrolling can interfere with the hack
-                
+
                 setTimeout(function() {
                     // this is more or less a hack
                     window.location.href = '#slide' + currentButton.attr('data-index');

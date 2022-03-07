@@ -1,16 +1,4 @@
-mixin carousel_item(id, eng_text, fil_text, src)
-    div.w-full.carousel-item.p-5(id= id)
-        .card.card-bordered.text-midnight-blue.shadow
-
-            figure.px-10.pt-10
-                img.rounded-xl(src=src)
-
-            .card-body
-                h2.card-title
-                    span.english-text= eng_text
-                    span.filipino-text= fil_text
-
-
+include ./content-mixins.pug
 
 .flex.flex-col.justify-center.items-center.px-20.font-sans.text-midnight-blue.pb-5.space-y-10(class='md:px-72 lg:px-96')
 

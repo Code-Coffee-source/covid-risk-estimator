@@ -1,0 +1,22 @@
+.summary-item:nth-child(even) :not(.hidden) {
+    background-color: #e3e7f0;
+}
+
+.summary-item > div {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+
+    .summary-item > div {
+
+        flex-direction: row;
+
+    }
+
+
+}

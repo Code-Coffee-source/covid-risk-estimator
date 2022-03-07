@@ -25,7 +25,7 @@
         description.text(data.description);
 
     }).fail(function(error) {
-        goTo('/');
+        goTo('/error404');
 
     });
 

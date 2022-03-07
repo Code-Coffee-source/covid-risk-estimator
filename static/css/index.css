@@ -1,4 +1,4 @@
-
+@import './components/large_button.css';
 
 .mobile_menu {
   -webkit-transition: all 1s ease-in-out;
