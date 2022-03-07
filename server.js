@@ -154,9 +154,8 @@ app.get(['/', '/:page', '/estimate/:key'], function(request, response) {
 
     if (title == titles['home'] && (page != 'home' || key)) {
         response.render('404');
-
     } else {
-    response.render('index.pug', { title, url: page, data: datapoints });
+        response.render('index.pug', { title, data: datapoints });
     }
 });
 

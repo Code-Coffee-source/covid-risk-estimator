@@ -2,12 +2,12 @@ mixin collapse_item(eng_title, fil_title, eng_body, fil_body)
     .collapse.border.border-base-300.bg-base-100.rounded-box.collapse-plus.mx-auto(tabindex='0')
         input(type='checkbox')
         .collapse-title.font-semibold.text-xl.tracking-wide(class='md:text-2xl xl:text-3xl')
-            span.english-text= eng_title
-            span.filipino-text= fil_title
+            span.english-text= !{eng_title}
+            span.filipino-text= !{fil_title}
         .collapse-content
             span.text-base.font-bold(class='md:text-lg xl:text-xl')
-                span.english-text!= eng_body
-                span.filipino-text= fil_body
+                span.english-text!= !{eng_body}
+                span.filipino-text= !{fil_body}
 
 mixin carousel_item(id, eng_text, fil_text, src)
     div.w-full.carousel-item.p-5(id= id)

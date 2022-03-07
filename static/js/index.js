@@ -38,9 +38,7 @@ function loadAjax(path, callback) {
             if (data.javascript) {
                 hasJavascript = true;
                 loadJavascriptFile(data.javascript);
-            }
-
-            if (!hasJavascript) {
+            } else {
                 setTimeout(function() {
                     rootContent.removeClass('hidden');
                     hideLoader();
