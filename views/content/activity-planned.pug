@@ -8,7 +8,7 @@ block page-number
     | 2 of 5
 
 block page-description
-    | Choose your preferred planned activity during the pandemic.
+    | From the presets below, kindly choose your preferred planned activity during the pandemic. If the planned activity is not included in the given choices, please press “the create your own” button.
 
 block progress-bar
     +bars(2,5)
@@ -16,7 +16,7 @@ block progress-bar
 block input
     section.space-y-3.px-0.font-sans
         .text-center.space-x-3
-            h1.text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  What is the planned activity?
+            h1.text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  What is your planned activity?
     .text-center.my-3.justify-center.space-y-3.px-0(class='sm:h-136 md:h-136 md:px-20 lg:px-0')
         .grid.grid-cols-3.gap-x-6.gap-y-2.text-midnight-blue(class='sm:h-max-5 md:max-h-full md:h-full md:gap-x-3 md:gap-y-1')
             for activity in data.activityPlanned

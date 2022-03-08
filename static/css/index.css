@@ -1,4 +1,5 @@
 @import './components/large_button.css';
+@import './components/tooltip.css';
 
 .mobile_menu {
   -webkit-transition: all 1s ease-in-out;
@@ -68,6 +69,7 @@ a.link-btn {
 .overflow-scroll {
     overflow: scroll;
 }
+
 
 /* This is the zoom hack */
 html {
