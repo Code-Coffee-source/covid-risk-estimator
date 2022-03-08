@@ -2,29 +2,38 @@
     setupNextBackButtons();
 
     var inputFields = $('#room_width, #room_height, #room_length');
-    var roomWidthAnswer = getAnswer('room-width');
-    var roomHeightAnswer = getAnswer('room-height');
-    var roomLengthAnswer = getAnswer('room-length');
+    var sizeBtns = $('.sizeBtn');
+    var roomSizeAnswer = getAnswer('room-size')
 
-    function checkInputs() {
-        var isValid = true;
-        inputFields.each(function() {
-            if ($(this).val().length == 0) isValid = false;
-        });
-        return isValid;
+    function checkIfDone() {
+        if (getAnswer('room-width') && getAnswer('room-height') && getAnswer('room-length')) return true;
     }
 
-    inputFields.each(function() {
-        $(this).change(function(event) {
-            var keyForStorage = 'room-' + this.id.split('_')[1]; // room-width, room-height, or room-length;
-            storeAnswer(keyForStorage, this.value);
-            if (checkInputs()) allowNextButton();
+    function makeActive(id) {
+
+        $('#'+id).addClass('bg-dirty-white').removeClass('bg-beige');
+        $('#'+id).siblings().addClass('bg-dirty-white').removeClass('bg-beige');
+
+    }
+
+    sizeBtns.each(function() {
+        $(this).click(function(event) {
+
+            var item = $(this);
+
+            storeAnswer('room-width', parseInt(item.attr('data-width')));
+            storeAnswer('room-height', parseInt(item.attr('data-height')));
+            storeAnswer('room-length', parseInt(item.attr('data-length')));
+            storeAnswer('room-size', item.attr('id'))
+
+            makeActive(item.attr('id'));
+
+
+            if (checkIfDone()) allowNextButton();
+
         }.bind(this));
     });
-    
-    if (roomWidthAnswer) $('#room_width').val(roomWidthAnswer);
-    if (roomHeightAnswer) $('#room_height').val(roomHeightAnswer);
-    if (roomLengthAnswer) $('#room_length').val(roomLengthAnswer);
-    if (checkInputs()) allowNextButton();
-})();
 
+    if (roomSizeAnswer) makeActive(roomSizeAnswer)
+
+})();

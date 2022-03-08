@@ -29,15 +29,32 @@ block input
                 .shadow.card.compact.dropdown-content.bg-base-100.rounded-box.w-52(tabindex='0')
                     .card-body
                         p This part of the estimator requires the user to estimate or to input the following: room height, length and width.
-        .grid.grid-cols-3.gap-4(class='md:px-28')
-            .row-span-2.text-center.self-center
-                input#room_height.bg-dirty-white.p-5.rounded-full.w-full.text-base.text-midnight-blue.leading-tight(class='md:text-xl focus:outline-none focus:shadow-outline' type='number' placeholder='Height')
-                span.text-base(class='md:text-xl')  meters
-            img.row-span-2.col-span-2(src='/static/images/room-size/room_size.png')
-            .col-span-1
-            .col-span-1
-                input#room_length.bg-dirty-white.p-5.rounded-full.w-full.text-base.text-midnight-blue.leading-tight(class='md:text-xl focus:outline-none focus:shadow-outline' type='number' placeholder='Length')
-                span.text-base(class='md:text-xl')  meters
-            .col-span-1
-                input#room_width.bg-dirty-white.p-5.rounded-full.w-full.text-base.text-midnight-blue.leading-tight(class='md:text-xl focus:outline-none focus:shadow-outline' type='number' placeholder='Width')
-                span.text-base(class='md:text-xl')  meters
+
+        .space-y-2.flex-col.flex
+            .flex-col.text-center.justify-center.space-y-3(class='lg:px-0')
+                .grid.grid-cols-3.gap-x-6.gap-y-2.text-midnight-blue.h-full(class='md:gap-x-3 md:gap-y-1')
+
+                    button#very-small.sizeBtn.bg-dirty-white.p-1.h-24.w-24.rounded-4xl.font-semibold.place-self-center.shadow-md.transform.transition.duration-300.ease-in-out.text-midnight-blue.cursor-pointer(class='md:p-2 xl:p-3 md:h-32 md:w-32 xl:h-40 xl:w-40 md:rounded-7xl focus:bg-beige active:bg-beige hover:bg-gray-300 focus:scale-105 active:scale-105 hover:scale-105 focus:shadow-xl active:shadow-xl hover:shadow-xl' data-length='4' data-width='5' data-height='10')
+                        span
+                            img.h-14.w-14.m-auto(class='md:w-16 md:h-16 xl:h-20 xl:w-20' src='/static/images/roomSize/very_small.svg')
+                        span.leading-none.text-sm(class='md:text-normal xl:text-xl') Very Small
+
+                    button#small.sizeBtn.bg-dirty-white.p-1.h-24.w-24.rounded-4xl.font-semibold.place-self-center.shadow-md.transform.transition.duration-300.ease-in-out.text-midnight-blue.cursor-pointer(class='md:p-2 xl:p-3 md:h-32 md:w-32 xl:h-40 xl:w-40 md:rounded-7xl focus:bg-beige active:bg-beige hover:bg-gray-300 focus:scale-105 active:scale-105 hover:scale-105 focus:shadow-xl active:shadow-xl hover:shadow-xl' data-length='10' data-width='12' data-height='10')
+                        span
+                            img.h-14.w-14.m-auto(class='md:w-16 md:h-16 xl:h-20 xl:w-20' src='/static/images/roomSize/small.svg')
+                        span.leading-none.text-sm(class='md:text-normal xl:text-xl') Small
+
+                    button#medium.sizeBtn.bg-dirty-white.p-1.h-24.w-24.rounded-4xl.font-semibold.place-self-center.shadow-md.transform.transition.duration-300.ease-in-out.text-midnight-blue.cursor-pointer(class='md:p-2 xl:p-3 md:h-32 md:w-32 xl:h-40 xl:w-40 md:rounded-7xl focus:bg-beige active:bg-beige hover:bg-gray-300 focus:scale-105 active:scale-105 hover:scale-105 focus:shadow-xl active:shadow-xl hover:shadow-xl' data-length='5' data-width='70' data-height='3')
+                        span
+                            img.h-14.w-14.m-auto(class='md:w-16 md:h-16 xl:h-20 xl:w-20' src='/static/images/roomSize/medium.svg')
+                        span.leading-none.text-sm(class='md:text-normal xl:text-xl') Medium
+
+                    button#large.sizeBtn.bg-dirty-white.p-1.h-24.w-24.rounded-4xl.font-semibold.place-self-center.shadow-md.transform.transition.duration-300.ease-in-out.text-midnight-blue.cursor-pointer(class='md:p-2 xl:p-3 md:h-32 md:w-32 xl:h-40 xl:w-40 md:rounded-7xl focus:bg-beige active:bg-beige hover:bg-gray-300 focus:scale-105 active:scale-105 hover:scale-105 focus:shadow-xl active:shadow-xl hover:shadow-xl' data-length='5' data-width='70' data-height='3')
+                        span
+                            img.h-14.w-14.m-auto(class='md:w-16 md:h-16 xl:h-20 xl:w-20' src='/static/images/roomSize/large.svg')
+                        span.leading-none.text-sm(class='md:text-normal xl:text-xl') Large
+
+                    button#very-large.sizeBtn.bg-dirty-white.p-1.h-24.w-24.rounded-4xl.font-semibold.place-self-center.shadow-md.transform.transition.duration-300.ease-in-out.text-midnight-blue.cursor-pointer(class='md:p-2 xl:p-3 md:h-32 md:w-32 xl:h-40 xl:w-40 md:rounded-7xl focus:bg-beige active:bg-beige hover:bg-gray-300 focus:scale-105 active:scale-105 hover:scale-105 focus:shadow-xl active:shadow-xl hover:shadow-xl' data-length='268' data-width='88' data-height='40')
+                        span
+                            img.h-14.w-14.m-auto(class='md:w-16 md:h-16 xl:h-20 xl:w-20' src='/static/images/roomSize/very_large.svg')
+                        span.leading-none.text-sm(class='md:text-normal xl:text-xl') Very Large
