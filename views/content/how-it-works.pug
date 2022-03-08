@@ -1,27 +1,5 @@
 include ./content-mixins.pug
 
-mixin collapse_item(eng_title, fil_title, eng_body, fil_body)
-    .collapse.border.border-base-300.bg-base-100.rounded-box.collapse-plus.mx-auto(tabindex='0')
-        input(type='checkbox')
-        .collapse-title.font-semibold.text-xl.tracking-wide(class='md:text-2xl xl:text-3xl')
-            span.english-text= eng_title
-            span.filipino-text= fil_title
-        .collapse-content
-            span.text-base.font-bold(class='md:text-lg xl:text-xl')
-                span.english-text!= eng_body
-                span.filipino-text= fil_body
-
-//-
-    .collapse(tabindex='0')
-        input(type='checkbox')
-        .collapse-title.text-xl.font-medium
-            | Click me to show/hide content
-        .collapse-content
-            p
-                span tabindex=&quot;0&quot; attribute is necessary to make the div focusable
-                a(href="/") test
-
-
 .flex.flex-col.justify-center.items-center.px-20.font-sans.text-midnight-blue.pb-5.space-y-10(npclass='md:px-72 lg:px-96')
     section.mx-auto.flex.align-items-center.justify-center(class='md:py-10')
         .container.space-y-10
@@ -38,14 +16,17 @@ section.info
 
     section.mx-auto.flex.align-items-center.justify-center.text-white(class='md:py-10')
         .container.space-y-10
+
+            img.w-full.p-10(src="static/images/how-it-works/formula-diagram.jpg" alt="image")
+
             .section.text-center
+
                 h1.text-3xl.font-semibold.text-center.py-7(class='md:text-4xl xl:text-5xl')  The risk estimator formulae
-
                 span.text-base.pr-20(class='md:text-lg xl:text-2xl')
-                  span.text-center.english-text
-                    | Inputs required from the user are shown in red. Inputs in blue are optional, as they are only asked when the user wants to create their own custom activity. However if they chose a preset, the inputs are pre-filled with values shown in tables below.
+                    span.text-center.english-text
+                        | Inputs required from the user are shown in red. Inputs in blue are optional, as they are only asked when the user wants to create their own custom activity. However if they chose a preset, the inputs are pre-filled with values shown in tables below.
 
-    .info-bottom-circle(style="background-color: white;")
+    .info-bottom-circle
 
 section.mx-auto.flex.align-items-center.justify-center(class='md:py-10')
     .container.space-y-10
@@ -53,22 +34,26 @@ section.mx-auto.flex.align-items-center.justify-center(class='md:py-10')
             h1.text-3xl.font-semibold.text-center.py-7(class='md:text-4xl xl:text-5xl')  Frequently Asked Questions
         .section.space-y-4
 
-            +collapse_item( "Where can I find and use Jimenez and Peng's risk estimator?",
+            +collapse_item( "aspire is based on what studies?",
                             "Saan ko makikita at magagamit ang risk estimator nila Jimenez and Peng",
-                            "You can access it through <a href='/' class='btn'>here</a>",
+                            "The estimator used on the website is based on <a href='https://tinyurl.com/covid-estimator' class='btn-link text-midnight-blue'> Jimenez and Peng’s COVID-19 Aerosol Transmission Estimator. </a>" +
+                            "The actual estimation’s interface is inspired from Brown-Lifespan Center for Digital Health’s MyCOVIDRisk App. " +
+                            "Additional research were done by the researchers to replace US-based parameters to the Philippine setting. ",
                             "Maari mo itong puntahan <a href='/' class='btn'>dito</a>")
 
-            +collapse_item( "What are the standard values used for each activity preset?",
+            +collapse_item( "Are the results accurate?",
                             "Maglagay ng translasyon dito",
-                            "The activity level for each activity preset were based on Jimenez and Peng's risk estimator values. The floor areas were obtained from various Philippine-based buildings. Room heights were based on the National Building Code of the Philippines.",
+                            "The estimator should not be viewed as accurate to real life because it only estimates the probability of one’s risk. " +
+                            "There are also many outside factors that cannot be put into the equation such as the user’s vaccination status, specific meters of social distancing, and precautionary measures performed by the user. <br/> " +
+                            "On the other hand, aspire is accurate to Jimenez and Peng's risk estimator where the formulae used were based. " +
+                            "The percentage error is very minimal, thus it is accurate to Jimenez and Peng's risk estimator. ",
                             "Maglagay ng translasyon dito")
 
-            +collapse_item( "What are the standard values used for each ventilation preset?",
+            +collapse_item( "What are the risk values and ranges?",
                             "Maglagay ng translasyon dito",
-                            "Ventilation with outside air values were grabbed from 2010 PSVARE Standards in the Philippine Green Building Code.",
+                            "No studies have yet to show the specific risk values for COVID-19. " +
+                            "The risk score ranges were adapted from Brown-Lifespan Center for Digital Health’s MyCOVIDRisk App which they based on a survey. The risk ranges are as follows: </br>" +
+                            "<ul> <li> &#8226; Very Low Risk = 0.00001% </li> " +
+                            "<li> &#8226; Low Risk = 0.01 - 0.00001% </li> <li> &#8226; Medium Risk = 0.01 - 0.1% </li>" +
+                            "<li> &#8226; High Risk = 0.1 - 5% </li> <li> &#8226; Very High Risk = 5% </li> </ul>",
                             "Maglagay ng translasyon dito")
-
-            +collapse_item( "May I ask for a detailed explanation of how the website was developed?",
-                            "Saan ko makikita at magagamit ang risk estimator nila Jimenez and Peng",
-                            "Of course! Since this website was done for the fulfillment of our research, you can check the methodolgy section of our paper <a href='/' class='btn'> here </a>",
-                            "Maari mo itong puntahan <a href='/' class='btn'>dito</a>")

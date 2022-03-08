@@ -17,6 +17,18 @@
   max-height: 20rem;
 }
 
+.btn-link {
+    border-color: transparent;
+    background-color: transparent;
+    color: #4197a7;
+}
+
+.btn-link:hover, .btn-link:active {
+    border-color: transparent;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
 /* Positioning the wrapper on the center of the page */
 #loader-wrapper {
     position: absolute;
