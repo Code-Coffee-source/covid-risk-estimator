@@ -6,6 +6,12 @@
    "Code": "NMEV"
  },
  {
+   "Name": "No Mask",
+   "InhalationMaskEfficiency": 0,
+   "ExhalationMaskEfficiency": 0,
+   "Code": "N0"
+ },
+ {
    "Name": "Face shield w/o mask",
    "InhalationMaskEfficiency": 0.23,
    "ExhalationMaskEfficiency": 0.23,

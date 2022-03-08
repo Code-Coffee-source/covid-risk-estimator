@@ -16,16 +16,17 @@ block progress-bar
 block input
     .flex.justify-evenly
         .space-y-10.flex-col.justify-evenly.items-center(class='lg:py-28')
-            .space-y-2.m-b(class='md:w-100')
-                .flex-col.text-center
-                    h1.text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  Estimate the percentage of people wearing masks:
-                .flex-col
-                    .range-slider-counter.w-full.col-span-3
-                        input#maskSlider.slider.h-2.w-full(type='range' min='0' max='100' value='50')
-                        .grid.grid-cols-1.gap-2
-                            .bg-dirty-white.px-3.py-2.text-midnight-blue.text-center.font-semibold.rounded-full.col-span-1
-                                input#sliderValue.w-full.text-center.bg-dirty-white(value="50%")
-                                
+
+            .flex.flex-col.justify-center.items-center.space-y-2.m-b
+
+                h1.text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  Estimate the percentage of people wearing masks:
+
+                .range-slider-counter.w-full.col-span-3
+                    input#maskSlider.slider.h-2.w-full(type='range' min='0' max='100' value='50')
+                    .grid.grid-cols-1.gap-2
+                        .bg-dirty-white.px-3.py-2.text-midnight-blue.text-center.font-semibold.rounded-full.col-span-1
+                            input#sliderValue.w-full.text-center.bg-dirty-white(value="50%")
+
             .space-y-2.flex-col.flex
                 .flex-col.justify-center.space-x-3
                     h1.text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  What type of mask are the people wearing? Kindly choose the majority if the type of face mask is more than one.
