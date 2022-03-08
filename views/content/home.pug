@@ -218,33 +218,37 @@ footer.bg-midnight-blue.mx-auto.flex.align-items-center.justify-center.text-whit
 //- consent form
 #consent_modal.modal
   .modal-box.space-y-5.h-96.overflow-auto(class='sm:h-auto')
+
     .p-6.card.bordered
       .form-control
         label.cursor-pointer.label
           span.label-text.w-80.text-lg
             span.english-text
-              | I understand that the website is not a replacement for any medical advice, device, or help.
+              | I have read and understood the informed consent form of the website.
             span.filipino-text
               | Naiintindihan ko na ang website na ito ay hindi pamalit sa anumang payo, kagamitan, o tulong na pang medikal.
           input.checkbox(type='checkbox' name='chk[]')
+
     .p-6.card.bordered
       .form-control
         label.cursor-pointer.label
           span.label-text.w-80.text-lg
             span.english-text
-              | I understand that this website&rsquo;s purpose is for estimating the possible risk of my planned activity, and does not guarantee my safety.
+              | I understand that the website is not a replacement for any medical advice and government protocols.
             span.filipino-text
               | Naiintindihan ko na ang layunin ng website na ito ay para sa pagtatantya ng posibleng panganib ng aking nakaplanong aktibidad, at hindi ginagarantiyahan ang aking kaligtasan sa COVID-19.
           input.checkbox(type='checkbox' name='chk[]')
+
     .p-6.card.bordered
       .form-control
         label.cursor-pointer.label
           span.label-text.w-80.text-lg
             span.english-text
-              | I am 18 years old and older.
+              | I understand that aspire’s purpose is to roughly calculate my safety of COVID-19. Thus, it does not cancel out the possibility of acquiring the virus.
             span.filipino-text
               | Ako ay 18 taong gulang o mas matanda pa sa nasabing edad.
           input.checkbox(type='checkbox' name='chk[]')
+
     .p-6.card.bordered
       .form-control
         label.cursor-pointer.label
@@ -254,15 +258,17 @@ footer.bg-midnight-blue.mx-auto.flex.align-items-center.justify-center.text-whit
             span.filipino-text
               | Ang aking nakaplanong aktibidad ay matatagpuan sa loob ng Pilipinas.
           input.checkbox(type='checkbox' name='chk[]')
+
     .p-6.card.bordered
       .form-control
         label.cursor-pointer.label
           span.label-text.w-80.text-lg
             span.english-text
-              | I do not exhibit symptoms of COVID-19.
+              | I do not exhibit symptoms of COVID-19/I do not have COVID-19.
             span.filipino-text
               | Wala akong anumang sintomas ng COVID-19.
           input.checkbox(type='checkbox' name='chk[]')
+
     .card.shadow
       .card-body
         a.btn(href="static/documents/AGALEPA_ICF.pdf" target="_blank" download="AGALEPA Informed Consent Form")
