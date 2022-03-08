@@ -3,7 +3,7 @@
   position: relative;
   display: grid;
   overflow: hidden;
-  width: 70rem;
+  width: 70vw;
 }
 
 .collapse-title,

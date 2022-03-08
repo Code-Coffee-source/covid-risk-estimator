@@ -8,7 +8,7 @@ block page-number
     | 2.1 of 5
 
 block page-description
-    | Click the left or right button (or slide when using mobile) to choose the intensity. The intensity increases from left to right.
+    | Click the left or right button (or slide when using mobile) to choose the intensity of your activity. The intensity increases from left to right. For more information, kindly click [tooltip icon]. Afterward, select the button between silent, speaking, and loudly speaking depending on how vocal you are during the activity.
 
 block progress-bar
     +bars(2, 2)
@@ -20,16 +20,21 @@ block progress-bar-after
     +bars(0, 2)
 
 block input
-    .flex.flex-col.justify-center.space-x-3
-        .flex.justify-center.space-x-3
-            h1.text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl') How intense is the activity?
-            .dropdown.dropdown-end
-                .btn.btn-circle.btn-ghost.btn-sm.text-info(tabindex='0')
-                    i.fas.fa-info-circle.text-midnight-blue
+    section.space-y-3.px-0.font-sans
+        .text-center.space-x-3
+            .text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  How intense is the activity?
+
+            .inline.dropdown.dropdown-end
+
+                button.btn.btn-circle.btn-sm.bg-green.tooltip-btn(tabindex='0')
+                    i.fas.fa-question
+
 
                 .shadow.card.compact.dropdown-content.bg-base-100.rounded-box.w-52(tabindex='0')
                     .card-body
-                        p The intensity of the activity refers to the nature of what the people will be doing for the planned activity (e.g. talking, sleeping, walking, &amp; running).
+                        p The intensity of the activity refers to the nature of what the people will be doing for the planned activity (e.g. talking, sleeping, walking, & running).
+
+
     .w-full.carousel
         each level, index in data.activityLevels
             .relative.w-full.carousel-item(id='slide' + index)

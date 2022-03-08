@@ -1,4 +1,5 @@
 @import './components/large_button.css';
+@import './components/tooltip.css';
 
 .mobile_menu {
   -webkit-transition: all 1s ease-in-out;
@@ -15,6 +16,18 @@
 
 .nav_show {
   max-height: 20rem;
+}
+
+.btn-link {
+    border-color: transparent;
+    background-color: transparent;
+    color: #4197a7;
+}
+
+.btn-link:hover, .btn-link:active {
+    border-color: transparent;
+    background-color: transparent;
+    text-decoration: underline;
 }
 
 /* Positioning the wrapper on the center of the page */
@@ -56,6 +69,7 @@ a.link-btn {
 .overflow-scroll {
     overflow: scroll;
 }
+
 
 /* This is the zoom hack */
 html {
