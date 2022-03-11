@@ -4,12 +4,20 @@ include ./content-mixins.pug
     section.mx-auto.flex.align-items-center.justify-center(class='md:py-10')
         .container.space-y-10
             .section.text-center
-                h1.text-3xl.font-semibold.text-center.py-7(class='md:text-4xl xl:text-5xl')  How It Works
+                h1.text-3xl.font-semibold.text-center.py-7(class='md:text-4xl xl:text-5xl')
+                    span.english-text
+                        | How It Works
+                    span.filipino-text
+                        | Paano Ito Gumagana?
 
                 span.text-base.pr-20(class='md:text-lg xl:text-2xl')
-                  span.text-center.english-text
-                    | The risk estimator formulae used in Aspire was taken from Jimenez and Peng's (2020) risk estimator.
-                    | The formulae were analyzed and broken down as seen below
+                    span.text-center.english-text
+                        | The risk estimator formulae used in Aspire was taken from Jimenez and Peng's (2020) risk estimator.
+                        | The formulae were analyzed and broken down as seen below
+                    span.text-center.filipino-text
+                        | Ang mga formula ay nagmumula sa pag-aaral nina Jimenez at Peng ukol sa kanilang risk estimator.
+                        |
+
 
 section.info
     .info-top-circle
@@ -21,10 +29,20 @@ section.info
 
             .section.text-center
 
-                h1.text-3xl.font-semibold.text-center.py-7(class='md:text-4xl xl:text-5xl')  The risk estimator formulae
-                span.text-base.pr-20(class='md:text-lg xl:text-2xl')
-                    span.text-center.english-text
-                        | Inputs required from the user are shown in red. Inputs in blue are optional, as they are only asked when the user wants to create their own custom activity. However if they chose a preset, the inputs are pre-filled with values shown in tables below.
+                h1.text-3xl.font-semibold.text-center.py-7(class='md:text-4xl xl:text-5xl')
+                    span.english-text
+                        | The risk estimator formulae
+                    span.filipino-text
+                        | Ang mga formula ng risk estimator
+                span.text-base.pr-20.text-justify(class='md:text-lg xl:text-2xl')
+                    span.english-text
+                        | Inputs required from the user are shown in red.
+                        | Inputs in blue are optional, as they are only asked when the user wants to create their own custom activity.
+                        | However if they chose a preset, the inputs are pre-filled with values shown in tables below.
+                    span.filipino-text
+                        | Ang mga input na nagmumula sa gagamit ng website ay  naka highlight gamit ang kulay pula.
+                        | Ang mga input na may kulay asul ay opsyonal dahil ilalagay lamang ang halaga ng mga ito kapag ang aktibidad ay custom-made.
+                        | Ngunit, kapag pinili nila ay isang <i> preset </i> mula sa <i> website </i>, ang inputs na nakakulay asul ay binibigay na ng website mismo batay sa mga talahanayan sa ibaba.
 
     .info-bottom-circle
 
