@@ -23,9 +23,17 @@ main.px-8.font-sans.text-midnight-blue.pb-5(class='sm:px-20 lg:px-72')
   .grid.grid-cols-1.gap-3.justify-items-center(class='md:flex md:flex-row-reverse md:justify-between')
     block pagination
       a.link-btn.text-gray-500.bg-gray-600.cursor-not-allowed(href="/" id="estimate-next" disabled)
-        | Next
+
+        span.english-text
+            | Next
+
+        span.filipino-text
+            | Tumuloy
 
       a.link-btn.text-midnight-blue.bg-dirty-white(href="/" id="estimate-previous")
-        | Back
+        span.english-text
+            | Back
+        span.filipino-text
+            | Bumalik
 
 block result

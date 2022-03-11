@@ -15,12 +15,14 @@ include ./content-mixins.pug
           span.filipino-text
             | Tantiyahin ang panganib ng iyong aktibidad gamit ang website upang makamit ang mas ligtas na karanasan sa panahon ng pandemya.
 
+
       .flex.flex-col.text-center.text-white.text-xs.font-black.tracking-widest2x.mt-5(class='sm:text-s md:text-base lg:text-lg md:pr-16')
-          a.bg-midnight-blue.my-2.py-3.rounded-full.shadow-lg(href="/how-to-use" class='md:py-5')
-            span.english-text
-                | HOW TO USE
-            span.filipino-text
-                | PAANO GAMITIN
+          //-
+            a.bg-midnight-blue.my-2.py-3.rounded-full.shadow-lg(href="/how-to-use" class='md:py-5')
+              span.english-text
+                  | HOW TO USE
+              span.filipino-text
+                  | PAANO GAMITIN
 
           a.bg-gold.my-2.py-3.rounded-full.shadow-lg(href='#consent_modal' class='md:py-5')
             span.english-text
@@ -258,7 +260,6 @@ footer.bg-midnight-blue.mx-auto.flex.align-items-center.justify-center.text-whit
             span.font-bold Thanks to Mr. Ralph Louis Gopez
             span who fixed major technical issues in the website and assisted in its development
 
-//- consent form
 #consent_modal.modal
   .modal-box.space-y-5.overflow-auto(class='sm:h-auto' style="width: 100vh")
 
@@ -269,7 +270,8 @@ footer.bg-midnight-blue.mx-auto.flex.align-items-center.justify-center.text-whit
             span.english-text
               | I have read and understood the informed consent form of the website.
             span.filipino-text
-              | Naiintindihan ko na ang website na ito ay hindi pamalit sa anumang payo, kagamitan, o tulong na pang medikal.
+              | Nabasa at naunawaan ko ang informed consent form ng website.
+
           input.checkbox(type='checkbox' name='chk[]')
 
     .p-6.card.bordered
@@ -279,7 +281,7 @@ footer.bg-midnight-blue.mx-auto.flex.align-items-center.justify-center.text-whit
             span.english-text
               | I understand that the website is not a replacement for any medical advice and government protocols.
             span.filipino-text
-              | Naiintindihan ko na ang layunin ng website na ito ay para sa pagtatantya ng posibleng panganib ng aking nakaplanong aktibidad, at hindi ginagarantiyahan ang aking kaligtasan sa COVID-19.
+              | Naiintindihan ko na ang website ay hindi pamalit sa anumang payong medikal at mga protokol ng gobyerno.
           input.checkbox(type='checkbox' name='chk[]')
 
     .p-6.card.bordered
@@ -287,9 +289,11 @@ footer.bg-midnight-blue.mx-auto.flex.align-items-center.justify-center.text-whit
         label.cursor-pointer.label
           span.label-text.w-80.text-lg
             span.english-text
-              | I understand that Aspire’s purpose is to roughly calculate my safety of COVID-19. Thus, it does not cancel out the possibility of acquiring the virus.
+              | I understand that Aspire’s purpose is to roughly calculate my safety of COVID-19.
+              | Thus, it does not cancel out the possibility of acquiring the virus.
             span.filipino-text
-              | Ako ay 18 taong gulang o mas matanda pa sa nasabing edad.
+              | Naiintindihan ko na ang layunin ng aspire ay kalkulahin ang aking kaligtasan sa COVID-19.
+              | Hindi nito kinakansela ang posibilidad na magkaroon ako ng nasabing virus.
           input.checkbox(type='checkbox' name='chk[]')
 
     .p-6.card.bordered
@@ -299,7 +303,7 @@ footer.bg-midnight-blue.mx-auto.flex.align-items-center.justify-center.text-whit
             span.english-text
               | My planned activity is located in the Philippines.
             span.filipino-text
-              | Ang aking nakaplanong aktibidad ay matatagpuan sa loob ng Pilipinas.
+              | Ang aking nakaplanong aktibidad ay matatagpuan sa Pilipinas.
           input.checkbox(type='checkbox' name='chk[]')
 
     .p-6.card.bordered

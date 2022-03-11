@@ -2,13 +2,19 @@ extends ../estimation.pug
 include ../estimation-mixins.pug
 
 block page-title
-    | Ventilation
+    span.english-text
+        | Ventilation
+    span.filipino-text
+        | Bentilasyon
 
 block page-number
     | 2.2 of 5
 
 block page-description
-    | To calculate your room’s ventilation, choose your activity location’s category.
+    span.english-text
+        | To calculate your room’s ventilation, choose your activity location’s category.
+    span.filipino-text
+        | Para kalkulahin ang bentilasyon ng kwarto, pindutin mula sa pagpipilian ang kategorya ng lokasyon.
 
 block progress-bar
     +bars(2, 2)
@@ -22,7 +28,9 @@ block progress-bar-after
 block input
     section.space-y-3.px-0.font-sans
         .text-center.space-x-3
-            .text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  What is the location’s category?
+            .text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')
+                span.english-text What is the location’s category?
+                span.filipino-text Ano ang kategorya ng lokasyon ng aktibidad?
 
             .inline.dropdown.dropdown-end
 
@@ -32,7 +40,10 @@ block input
 
                 .shadow.card.compact.dropdown-content.bg-base-100.rounded-box.w-52(tabindex='0')
                     .card-body
-                        p If you think your preferred activity is not located in the given places, kindly choose the similar location.
+                        p.english-text
+                            | If you think your preferred activity is not located in the given places, kindly choose the similar location.
+                        p.filipino-text
+                            | Kung sa tingin mo na ang lokasyon ng iyong aktibidad ay wala sa pagpipilian, pindutin ang pinakamalapit o katulad na kategorya.
 
 
         .text-center.my-3.justify-center.space-y-3.px-0(class='md:h-136 md:px-20 lg:px-0')

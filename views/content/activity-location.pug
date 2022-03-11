@@ -2,20 +2,30 @@ extends ../estimation.pug
 include ../estimation-mixins.pug
 
 block page-title
-    | Activity Location
+    span.english-text
+        | Activity Location
+    span.filipino-text
+        | Lokasyon ng Aktibidad
 
 block page-number
     | 1 of 5
 
 block page-description
-    | Choose the region of the activity’s location.
+    span.english-text
+        | Choose the region of the activity’s location.
+    span.filipino-text
+        | Piliin ang rehiyon para sa lokasyon ng aktibidad.
 
 block progress-bar
     +bars(1,5)
 
 block input
     .flex.justify-center.space-x-3
-        h1.text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  Where will the activity take place?
+        h1.text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')
+            span.english-text
+                | Where will the activity take place?
+            span.filipino-text
+                | Sa anong rehiyon gaganapin ang aktibidad?
 
     .flex.flex-col.justify-center.w-full
         //-
