@@ -5,4 +5,4 @@ let maskTypes = require('./mask-types.json');
 let results = require('./results.json');
 let ventilationRates = require('./ventilation-rates.json');
 
-module.exports = { activityLevels, activityLocation, activityPlanned, maskTypes, results, ventilationRates } 
+module.exports = { activityLevels, activityLocation, activityPlanned, maskTypes, results, ventilationRates }

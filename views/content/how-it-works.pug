@@ -8,7 +8,7 @@ include ./content-mixins.pug
 
                 span.text-base.pr-20(class='md:text-lg xl:text-2xl')
                   span.text-center.english-text
-                    | The risk estimator formulae used in aspire was taken from Jimenez and Peng's (2020) risk estimator.
+                    | The risk estimator formulae used in Aspire was taken from Jimenez and Peng's (2020) risk estimator.
                     | The formulae were analyzed and broken down as seen below
 
 section.info
@@ -34,20 +34,12 @@ section.mx-auto.flex.align-items-center.justify-center(class='md:py-10')
             h1.text-3xl.font-semibold.text-center.py-7(class='md:text-4xl xl:text-5xl')  Frequently Asked Questions
         .section.space-y-4
 
-            +collapse_item( "aspire is based on what studies?",
+            +collapse_item( "Aspire is based on what studies?",
                             "Saan ko makikita at magagamit ang risk estimator nila Jimenez and Peng",
                             "The estimator used on the website is based on <a href='https://tinyurl.com/covid-estimator' class='btn-link text-midnight-blue'> Jimenez and Peng’s COVID-19 Aerosol Transmission Estimator. </a>" +
                             "The actual estimation’s interface is inspired from Brown-Lifespan Center for Digital Health’s MyCOVIDRisk App. " +
                             "Additional research were done by the researchers to replace US-based parameters to the Philippine setting. ",
                             "Maari mo itong puntahan <a href='/' class='btn'>dito</a>")
-
-            +collapse_item( "Are the results accurate?",
-                            "Maglagay ng translasyon dito",
-                            "The estimator should not be viewed as accurate to real life because it only estimates the probability of one’s risk. " +
-                            "There are also many outside factors that cannot be put into the equation such as the user’s vaccination status, specific meters of social distancing, and precautionary measures performed by the user. <br/> " +
-                            "On the other hand, aspire is accurate to Jimenez and Peng's risk estimator where the formulae used were based. " +
-                            "The percentage error is very minimal, thus it is accurate to Jimenez and Peng's risk estimator. ",
-                            "Maglagay ng translasyon dito")
 
             +collapse_item( "What are the risk values and ranges?",
                             "Maglagay ng translasyon dito",
@@ -56,4 +48,27 @@ section.mx-auto.flex.align-items-center.justify-center(class='md:py-10')
                             "<ul> <li> &#8226; Very Low Risk = 0.00001% </li> " +
                             "<li> &#8226; Low Risk = 0.01 - 0.00001% </li> <li> &#8226; Medium Risk = 0.01 - 0.1% </li>" +
                             "<li> &#8226; High Risk = 0.1 - 5% </li> <li> &#8226; Very High Risk = 5% </li> </ul>",
+                            "Maglagay ng translasyon dito")
+
+            +collapse_item( "Are the results accurate?",
+                            "Maglagay ng translasyon dito",
+                            "The estimator should not be viewed as accurate to real life because it only estimates the probability of one’s risk. " +
+                            "There are also many outside factors that cannot be put into the equation such as the user’s vaccination status, specific meters of social distancing, and precautionary measures performed by the user. <br/> " +
+                            "On the other hand, Aspire is accurate to Jimenez and Peng's risk estimator where the formulae used were based. " +
+                            "Shown below is a comparison between the results of aspire and Jimenez and Peng’s estimator. " +
+                            " <img class='w-full p-10 shadow m-2' src='static/images/how-it-works/formula-test-log.jpg' alt='image'>  " +
+                            "The percentage error is very minimal, thus it is accurate to Jimenez and Peng's risk estimator. ",
+                            "Maglagay ng translasyon dito")
+
+            +collapse_item( "What are the standard values used for each activity preset?",
+                            "Maglagay ng translasyon dito",
+                            " <img class='w-full p-10 shadow m-2' src='static/images/how-it-works/activity-preset-values.jpg' alt='image'>  " +
+                            "The activity level for each activity preset were based on Jimenez and Peng's risk estimator values." +
+                            "The floor areas were obtained from various Philippine-based builfings. Room heights were based on the National Building Code of the Philippines ",
+                            "Maglagay ng translasyon dito")
+
+            +collapse_item( "What are the standard values used for each ventilation preset?",
+                            "Maglagay ng translasyon dito",
+                            " <img class='w-full p-10 shadow m-2' src='static/images/how-it-works/ventilation-preset-values.jpg' alt='image'>  " +
+                            "Ventilation with outside air values were grabbed from 2010 PSVARE Standards in the Philippine Green Buildiong Code.",
                             "Maglagay ng translasyon dito")
