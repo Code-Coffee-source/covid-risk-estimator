@@ -2,53 +2,80 @@ extends ../estimation.pug
 include ../estimation-mixins.pug
 
 block page-title
-    | Results
+    span.english-text Results
+    span.filipino-text Resulto
 
 block page-number
     | 5 of 5
 
 block page-description
-    | Check the results below.
+    span.english-text Check the results below.
+    span.filipino-text Tignan ang resulto sa baba.
+
 
 block progress-bar
     +bars(5,5)
 
 block result
     section.code.h-auto.px-8.py-3.text-center.flex.flex-col.space-y-6.py-10.hidden(id="background" class='sm:px-20 lg:px-96 ')
-        span.font-bold.code(class='txt' id="text-color")  Your activity has a...
+
+        span.font-bold.code(class='txt' id="text-color")
+            span.english-text Your activity has a...
+            span.filipino-text Ang iyong aktibidad ay mayroong...
         span.mx-auto
             img.w-56.h-56(id="image")
-        h2.font-semibold.text-xl.tracking-wider.text-white(class='md:text-3xl xl:text-4xl' id="name")
-        span.text-white(id="description")
+        h2.font-semibold.text-xl.tracking-wider.text-white(class='md:text-3xl xl:text-4xl')
+            span#engName.english-text
+            span#filName.filipino-text
+
+        span.text-white
+            span#engDescription.english-text
+            span#filDescription.filipino-text
+
 
     section.h-auto.px-8.py-3.flex.flex-col(class='sm:px-20 lg:px-96 ')
         .alert.alert-warning.shadow-lg
             div
                 svg.stroke-current.flex-shrink-0.h-6.w-6(xmlns='http://www.w3.org/2000/svg', fill='none', viewbox='0 0 24 24')
                     path(stroke-linecap='round', stroke-linejoin='round', stroke-width='2', d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z')
-                span
+                span.english-text
                     | Warning: This is only an estimation and should not replace advice from medical professionals.
-
-
-
+                span.filipino-text
+                    | Babala: Ito ay pagtataniya lamang, huwag itong ipagpalit sa payo ng mga propesyonal.
 
     section.px-8.py-3.flex.flex-col.text-midnight-blue.text-center(class='sm:px-20 lg:px-96 ')
-        h3.font-bold.text-xl  Want to test other values?
-
+        h3.font-bold.text-xl
+            span.english-text Want to test other values?
+            span.filipino-text Gustong subukan ang iba pang mga halaga?
         span.btn-container
-            a.link-btn.shadow-sm.bg-dirty-white(href="/estimate/5" type='button')  Go back to summary
-            a.link-btn.shadow-sm.bg-dirty-white(href="/estimate/1" type='button' id="new-risk")  Get new risk level
+            a.link-btn.shadow-sm.bg-dirty-white(href="/estimate/5" type='button')
+                span.english-text Go back to summary
+                span.filipino-text Bumalik sa buod
+            a.link-btn.shadow-sm.bg-dirty-white(href="/estimate/1" type='button' id="new-risk")
+                span.english-text  Get new risk level
+                span.filipino-text Kumuha ng bagong risk level
 
     section.px-8.py-2.flex.flex-col.text-gray-400.text-left.leading-snug.space-y-4(class='sm:px-20 lg:px-96 ')
         .alert.alert-success.shadow-lg
             div
                 svg.stroke-current.flex-shrink-0.h-6.w-6(xmlns='http://www.w3.org/2000/svg', fill='none', viewbox='0 0 24 24')
                     path(stroke-linecap='round', stroke-linejoin='round', stroke-width='2', d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
-                span Thank you very much for using Aspire! Please support the researchers by answering a short survery to help improve the website!
+                span.english-text
+                    | Thank you very much for using Aspire! Please support the researchers by answering a short survery to help improve the website!
+                span.filipino-text
+                    | Maraming salamat sa paggamit ng Aspire! Maaaring suportahan ang mga mananaliksik sa pamamagitan ng pagsagot sa isang maikling survey upang makatulong na mapabuti ang website!
 
         section.text-white.btn-container
-            a.link-btn.bg-midnight-blue(href='/how-it-works' type='button') Learn how Aspire works
-            a.link-btn.bg-green(href='https://forms.gle/mknhWeSdLcBHNc1m7' type='button')  Answer Survey
+            a.link-btn.bg-midnight-blue(href='/how-it-works' type='button')
+                span.english-text
+                    | Learn how Aspire works
+                span.filipino-text
+                    | Matuto kung paano gumagana ang Aspire
+            a.link-btn.bg-green(href='https://forms.gle/mknhWeSdLcBHNc1m7' type='button')
+                span.english-text
+                    | Answer Survey
+                span.filipino-text
+                    | Sagutin ang Survey
 
 block pagination
     |

@@ -58,28 +58,29 @@ block input
                 .p-5.w-full(class='lg:py-6 lg:px-20')
                     .card.shadow-lg
                         figure.p-0.m-0(class='sm:max-h-80 md:h-80')
-                            img.p-0.m-0.w-full(class='md:h-full' src='/static/images/activity-level/' + level['Name'] + '.svg' alt=level['Name'])
+                            img.p-0.m-0.w-full(class='md:h-full' src='/static/images/activity-level/' + level['english']['Name'] + '.svg' alt=level['english']['Name'])
                         .card-body.pt-0.mt-0
                             h2.card-title.text-3xl.flex.space-x-3
                                 span.english-text
-                                    | #{level['Name']}
+                                    | #{level['english']['Name']}
                                 span.filipino-text
-                                    | #{level['Name']}
+                                    | #{level['filipino']['Name']}
                                 span.card-icon.flex.items-center.hidden(id='title' + index)
                                     i.fas.fa-check-circle(style="color: #4cb9a6" )
 
-                            p #{level['Desc']}
+                            p.english-text #{level['english']['Desc']}
+                            p.filipino-text #{level['filipino']['Desc']}
                             .card-actions.py-4.mt-0.pt-0
                                 .space-y-2
                                     h6.font-bold.text-gray-500 How vocal are you during the activity?
                                     .font-normal.space-x-2
-                                        button.adv_btn.btn.btn-sm.cursor-pointer(data-name=level['Name'] data-code=level['Code'] + ' OB' data-index=index)
+                                        button.adv_btn.btn.btn-sm.cursor-pointer(data-name=level['english']['Name'] data-code=level['Code'] + ' OB' data-index=index)
                                             span.english-text Silent
                                             span.filipino-text Tahimik
-                                        button.adv_btn.btn.btn-sm.cursor-pointer(data-name=level['Name'] data-code=level['Code'] + ' S' data-index=index)
+                                        button.adv_btn.btn.btn-sm.cursor-pointer(data-name=level['english']['Name'] data-code=level['Code'] + ' S' data-index=index)
                                             span.english-text Speaking
                                             span.filipino-text Nagsasalita
-                                        button.adv_btn.btn.btn-sm.cursor-pointer(data-name=level['Name'] data-code=level['Code'] + ' LS' data-index=index)
+                                        button.adv_btn.btn.btn-sm.cursor-pointer(data-name=level['english']['Name'] data-code=level['Code'] + ' LS' data-index=index)
                                             span.english-text Loudly Speaking
                                             span.filipino-text Malakas na Pagsasalita
 

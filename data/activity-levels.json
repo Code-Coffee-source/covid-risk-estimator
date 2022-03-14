@@ -1,7 +1,15 @@
 [
     {
-        "Name": "Resting",
-        "Desc": "An activity that requires you to stay in a relaxed position. Examples: Sitting down and sleeping.",
+        "english": {
+            "Name": "Resting",
+            "Desc": "An activity that requires you to stay in a relaxed position. Examples: Sitting down and sleeping."
+        },
+
+        "filipino": {
+            "Name": "Nagpapahinga",
+            "Desc": "Isang aktibidad kung saan kayo ay nanatili sa nakarelaks na posisyon. Halimbawa: Nakaupo at natutulog."
+        },
+
         "QuantaExhalationRate": 2,
         "Code": "R",
         "Oral breathing": 2,
@@ -9,8 +17,16 @@
         "Loudly speaking": 60.5
     },
     {
-        "Name": "Mostly Standing",
-        "Desc": "An activity that requires you to mostly stay in an idle position. Examples: Talking while teaching a class, and waiting for a bus stop.",
+        "english": {
+            "Name": "Mostly Standing",
+            "Desc": "An activity that requires you to mostly stay in an idle position. Examples: Talking while teaching a class, and waiting for a bus stop."
+        },
+
+        "filipino": {
+            "Name": "Kadalasang Nakatayo",
+            "Desc": "Isang aktibidad kung saan kayo ay nanatili sa nakatayong posisyon ng matagalan. Halimbawa: Nagtuturo o naghihintay sa paradahan."
+        },
+
         "QuantaExhalationRate": 2.3,
         "Code": "MS",
         "Oral breathing": 2.3,
@@ -18,8 +34,16 @@
         "Loudly speaking": 65.1
     },
     {
-        "Name": "Light Movement",
-        "Desc": "An activity that requires little or no effort to exert. Examples: walking, strolling down the street, and grocery shopping.",
+        "english": {
+            "Name": "Light Movement",
+            "Desc": "An activity that requires little or no effort to exert. Examples: walking, strolling down the street, and grocery shopping."
+        },
+
+        "filipino": {
+            "Name": "Madaling Aktibidad",
+            "Desc": "Isang aktibidad kung saan kayo ay gumagamit ng konti walang lakas. Halimbawa: Naglalakad at pagbili ng mga grocery."
+        },
+
         "QuantaExhalationRate": 5.6,
         "Code": "LM",
         "Oral breathing": 5.6,
@@ -27,8 +51,16 @@
         "Loudly speaking": 170
     },
     {
-        "Name": "Heavy Movement",
-        "Desc": "An activity that requires moderate to maximum effort to exert. Examples: running, exercising in a gym, and swimming.",
+        "english": {
+            "Name": "Heavy Movement",
+            "Desc": "An activity that requires moderate to maximum effort to exert. Examples: running, exercising in a gym, and swimming."
+        },
+
+        "filipino": {
+            "Name": "Mahihirap na Aktibidad",
+            "Desc": "Isang aktibidad kung saan kayo ay gumagamit ng lakas. Halimbawa: Tumatakbo, ehersisyo at paglalangoy."
+        },
+
         "QuantaExhalationRate": 13.5,
         "Code": "HM",
         "Oral breathing": 13.5,
