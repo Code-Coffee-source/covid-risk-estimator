@@ -14,7 +14,7 @@ main.px-8.font-sans.text-midnight-blue.pb-5(class='sm:px-20 lg:px-72')
         .h-1.grid.grid-cols-4
             block progress-bar-subset
         block progress-bar-after
-    p.text-xl.tracking-tight.font-bold(class='md:text-2xl xl:text-3xl')
+    p.text-midnight-blue.text-lg.font-bold.tracking-normal(class='md:text-xl xl:text-2xl')
       block page-description
 
   section.space-y-3.mt-5.font-sans.mb-3(class='xl:px-32')
@@ -23,9 +23,17 @@ main.px-8.font-sans.text-midnight-blue.pb-5(class='sm:px-20 lg:px-72')
   .grid.grid-cols-1.gap-3.justify-items-center(class='md:flex md:flex-row-reverse md:justify-between')
     block pagination
       a.link-btn.text-gray-500.bg-gray-600.cursor-not-allowed(href="/" id="estimate-next" disabled)
-        | Next
+
+        span.english-text
+            | Next
+
+        span.filipino-text
+            | Tumuloy
 
       a.link-btn.text-midnight-blue.bg-dirty-white(href="/" id="estimate-previous")
-        | Back
+        span.english-text
+            | Back
+        span.filipino-text
+            | Bumalik
 
 block result

@@ -2,14 +2,17 @@ extends ../estimation.pug
 include ../estimation-mixins.pug
 
 block page-title
-    | Summary
+    span.english-text Summary
+    span.filipino-text Buod
 
 block page-number
     | 5 of 5
 
 block page-description
-    | YCheck and edit your selections below. To return to this page, click the go back button (usually the left button beside website URL).
-
+    span.english-text
+        | Check and edit your selections below. To return to this page, click the go back button (usually the left button beside website URL).
+    span.filipino-text
+        | Suriin at baguhin ang kinakailangan batay sa mga halaga na matatagpuan sa ibaba. Upang bumalik sa pahinang ito, mangyaring piliin ang kaliwang pindutan na matatagpuan katabi ng URL ng website. 
 block progress-bar
     +bars(5,5)
 

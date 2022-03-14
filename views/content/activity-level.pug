@@ -2,13 +2,23 @@ extends ../estimation.pug
 include ../estimation-mixins.pug
 
 block page-title
-    | Activity Level
+    span.english-text
+        | Activity Level
+    span.filipino-text
+        |  Antas ng Aktibidad
 
 block page-number
     | 2.1 of 5
 
 block page-description
-    | Click the left or right button (or slide when using mobile) to choose the intensity of your activity. The intensity increases from left to right. For more information, kindly click [tooltip icon]. Afterward, select the button between silent, speaking, and loudly speaking depending on how vocal you are during the activity.
+    span.english-text
+        | Click the left or right button (or slide when using mobile) to choose the intensity of your activity.
+        | The intensity increases from left to right.
+        | Afterward, select the button between silent, speaking, and loudly speaking depending on how vocal you are during the activity.
+    span.filipino-text
+        | Piliin mula sa kaliwa o kanang pindutan ang tindi ng aktibidad.
+        | Pagkatapos, pumuli mula sa “tahimik,” “pagsasalita,” at “malakas na pagsasalita” depende kung paano mo gagamitin ang iyong boses sa aktibidad.
+
 
 block progress-bar
     +bars(2, 2)
@@ -22,7 +32,11 @@ block progress-bar-after
 block input
     section.space-y-3.px-0.font-sans
         .text-center.space-x-3
-            .text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  How intense is the activity?
+            .text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')
+                span.english-text
+                    | How intense is the activity?
+                span.filipino-text
+                    | Gaano katindi ang aktibidad?
 
             .inline.dropdown.dropdown-end
 
@@ -32,7 +46,10 @@ block input
 
                 .shadow.card.compact.dropdown-content.bg-base-100.rounded-box.w-52(tabindex='0')
                     .card-body
-                        p The intensity of the activity refers to the nature of what the people will be doing for the planned activity (e.g. talking, sleeping, walking, & running).
+                        p.english-text
+                            | The intensity of the activity refers to the nature of what the people will be doing for the planned activity (e.g. talking, sleeping, walking, & running).
+                        p.filipino-text
+                            | Ang tindi ng aktibidad ay tumutukoy sa paraan ng aksyon ng mga tao sa pagganap ng aktibidad (Hal. pakikipag-usap, pagtulog, paglalakad, at pagtakbo).
 
 
     .w-full.carousel
@@ -41,22 +58,31 @@ block input
                 .p-5.w-full(class='lg:py-6 lg:px-20')
                     .card.shadow-lg
                         figure.p-0.m-0(class='sm:max-h-80 md:h-80')
-                            img.p-0.m-0.w-full(class='md:h-full' src='/static/images/activity-level/' + level['Name'] + '.svg' alt=level['Name'])
+                            img.p-0.m-0.w-full(class='md:h-full' src='/static/images/activity-level/' + level['english']['Name'] + '.svg' alt=level['english']['Name'])
                         .card-body.pt-0.mt-0
                             h2.card-title.text-3xl.flex.space-x-3
-                                span
-                                    | #{level['Name']}
+                                span.english-text
+                                    | #{level['english']['Name']}
+                                span.filipino-text
+                                    | #{level['filipino']['Name']}
                                 span.card-icon.flex.items-center.hidden(id='title' + index)
                                     i.fas.fa-check-circle(style="color: #4cb9a6" )
 
-                            p #{level['Desc']}
+                            p.english-text #{level['english']['Desc']}
+                            p.filipino-text #{level['filipino']['Desc']}
                             .card-actions.py-4.mt-0.pt-0
                                 .space-y-2
                                     h6.font-bold.text-gray-500 How vocal are you during the activity?
                                     .font-normal.space-x-2
-                                        button.adv_btn.btn.btn-sm.cursor-pointer(data-name=level['Name'] data-code=level['Code'] + ' OB' data-index=index) Silent
-                                        button.adv_btn.btn.btn-sm.cursor-pointer(data-name=level['Name'] data-code=level['Code'] + ' S' data-index=index) Speaking
-                                        button.adv_btn.btn.btn-sm.cursor-pointer(data-name=level['Name'] data-code=level['Code'] + ' LS' data-index=index) Loudly Speaking
+                                        button.adv_btn.btn.btn-sm.cursor-pointer(data-name=level['english']['Name'] data-code=level['Code'] + ' OB' data-index=index)
+                                            span.english-text Silent
+                                            span.filipino-text Tahimik
+                                        button.adv_btn.btn.btn-sm.cursor-pointer(data-name=level['english']['Name'] data-code=level['Code'] + ' S' data-index=index)
+                                            span.english-text Speaking
+                                            span.filipino-text Nagsasalita
+                                        button.adv_btn.btn.btn-sm.cursor-pointer(data-name=level['english']['Name'] data-code=level['Code'] + ' LS' data-index=index)
+                                            span.english-text Loudly Speaking
+                                            span.filipino-text Malakas na Pagsasalita
 
                 .hidden.absolute.justify-between.transform.left-5.right-5(class='lg:flex -translate-y-1/2 top-1/2')
                     - var nextIndex = (index + 1) == data.activityLevels.length ? 0 : (index + 1)

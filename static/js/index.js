@@ -243,9 +243,6 @@ function setActiveCard(cardId) {
             $(this).removeClass('hidden');
         }
     });
-
-
-
 }
 
 bindSeamlessLinks();

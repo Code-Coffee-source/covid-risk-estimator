@@ -2,13 +2,19 @@ extends ../estimation.pug
 include ../estimation-mixins.pug
 
 block page-title
-    | Ventilation
+    span.english-text
+        | Ventilation
+    span.filipino-text
+        | Bentilasyon
 
 block page-number
     | 2.2 of 5
 
 block page-description
-    | To calculate your room’s ventilation, choose your activity location’s category.
+    span.english-text
+        | To calculate your room’s ventilation, choose your activity location’s category.
+    span.filipino-text
+        | Para kalkulahin ang bentilasyon ng kwarto, pindutin mula sa pagpipilian ang kategorya ng lokasyon.
 
 block progress-bar
     +bars(2, 2)
@@ -22,7 +28,9 @@ block progress-bar-after
 block input
     section.space-y-3.px-0.font-sans
         .text-center.space-x-3
-            .text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')  What is the location’s category?
+            .text-midnight-blue.text-lg.font-black.tracking-normal(class='md:text-xl xl:text-2xl')
+                span.english-text What is the location’s category?
+                span.filipino-text Ano ang kategorya ng lokasyon ng aktibidad?
 
             .inline.dropdown.dropdown-end
 
@@ -32,14 +40,19 @@ block input
 
                 .shadow.card.compact.dropdown-content.bg-base-100.rounded-box.w-52(tabindex='0')
                     .card-body
-                        p If you think your preferred activity is not located in the given places, kindly choose the similar location.
+                        p.english-text
+                            | If you think your preferred activity is not located in the given places, kindly choose the similar location.
+                        p.filipino-text
+                            | Kung sa tingin mo na ang lokasyon ng iyong aktibidad ay wala sa pagpipilian, pindutin ang pinakamalapit o katulad na kategorya.
 
 
         .text-center.my-3.justify-center.space-y-3.px-0(class='md:h-136 md:px-20 lg:px-0')
             .grid.grid-cols-3.gap-x-6.gap-y-2.text-midnight-blue(class='sm:h-136 md:h-full md:gap-x-3 md:gap-y-1')
                 for ventilation in data.ventilationRates
                     if ventilation['Use In Custom']
-                        button.presetBtn.bg-dirty-white.p-1.h-24.w-24.rounded-4xl.font-semibold.place-self-center.shadow-md.transform.transition.duration-300.ease-in-out.text-midnight-blue(name='preset' class='md:p-2 xl:p-3 md:h-32 md:w-32 xl:h-40 xl:w-40 md:rounded-7xl focus:bg-beige active:bg-beige hover:bg-gray-300 focus:scale-105 active:scale-105 hover:scale-105 focus:shadow-xl active:shadow-xl hover:shadow-xl' data-name=ventilation['Name'] data-code=ventilation['Code'])
+                        button.presetBtn.bg-dirty-white.p-1.h-24.w-24.rounded-4xl.font-semibold.place-self-center.shadow-md.transform.transition.duration-300.ease-in-out.text-midnight-blue(name='preset' class='md:p-2 xl:p-3 md:h-32 md:w-32 xl:h-40 xl:w-40 md:rounded-7xl focus:bg-beige active:bg-beige hover:bg-gray-300 focus:scale-105 active:scale-105 hover:scale-105 focus:shadow-xl active:shadow-xl hover:shadow-xl' data-name=ventilation['english']['Name'] data-code=ventilation['Code'])
                             span
-                                img.h-14.w-14.m-auto(class='md:w-16 md:h-16 xl:h-20 xl:w-20' src='/static/images/room-ventilation/'+ventilation['Name']+'.svg' alt=ventilation['Name'])
-                            span.leading-none.text-sm(class='md:text-normal xl:text-xl') #{ventilation['Name']}
+                                img.h-14.w-14.m-auto(class='md:w-16 md:h-16 xl:h-20 xl:w-20' src='/static/images/room-ventilation/'+ventilation['english']['Name']+'.svg' alt=ventilation['english']['Name'])
+                            span.leading-none.text-sm(class='md:text-normal xl:text-xl')
+                                span.english-text #{ventilation['english']['Name']}
+                                span.filipino-text #{ventilation['filipino']['Name']}

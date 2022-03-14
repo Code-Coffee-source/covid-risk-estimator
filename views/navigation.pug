@@ -21,33 +21,31 @@ header(class="px-8 sm:px-20 lg:px-72 font-sans text-midnight-blue bg-transparent
                 a(href="/how-it-works" class="btn btn-ghost btn-sm text-base tracking-tight md:text-lg xl:text-xl rounded-btn capitalize")
                     i(class="fas fa-file-alt inline-block w-5 mr-2")
                     | How It Works
+
         //-
             li
                     a(href="/how-to-use" class="btn btn-ghost btn-sm text-base tracking-tight md:text-lg xl:text-xl rounded-btn capitalize")
                         i(class="fas fa-question inline-block w-5 mr-2")
                         | How To Use
 
+        div(class="flex-none ")
 
-            //-
-                li
-                    div(class="dropdown dropdown-end")
-                        button.langMenu.bg-gold.text-white(class="text-base tracking-tight md:text-lg xl:text-xl capitalize")
-                            span#langMenuText English
-                            i.fas.fa-caret-down
-                        ul(class="menu dropdown-content py-3 shadow-lg bg-base-100 rounded-box w-52")
-                            li(class="menu-title")
-                                span Languange
-                            li
-                                button#english.menu-item(class="langBtn capitalize cursor-pointer")
-                                    | English
-                            li
-                                button#filipino.menu-item(class="langBtn capitalize cursor-pointer")
-                                    | Filipino
+            div(class="dropdown dropdown-end")
+                button.langMenu.bg-gold.text-white(class="text-base tracking-tight md:text-lg xl:text-xl capitalize")
+                    span#langMenuText English
+                    i.fas.fa-caret-down
 
-        // change purple background to green onclick
+                ul(class="menu dropdown-content py-3 shadow-lg bg-base-100 rounded-box w-52")
+                    li(class="menu-title")
+                        span Languange
+                    li
+                        button#english.menu-item(class="langBtn capitalize cursor-pointer")
+                            | English
+                    li
+                        button#filipino.menu-item(class="langBtn capitalize cursor-pointer")
+                            | Filipino
 
-        div(class="flex-none lg:hidden")
-            div(class="dropdown dropdown-end" id="mobile-nav")
+            div(class="dropdown dropdown-end lg:hidden" id="mobile-nav")
 
                 button(tabindex="0" class="m-1 btn btn-square btn-ghost")
                     svg(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current")
@@ -70,6 +68,11 @@ header(class="px-8 sm:px-20 lg:px-72 font-sans text-midnight-blue bg-transparent
                         a.menu-item(href="/how-it-works" class="capitalize cursor-pointer")
                             i(class="fas fa-file-alt inline-block w-5 mr-2")
                             | How It Works
+
+
+
+
+
 
                 //-
                     li
