@@ -68,3 +68,26 @@ block input
                         span.leading-none.text-sm(class='md:text-normal xl:text-xl')
                             span.english-text Very Large
                             span.filipino-text Napakalaki
+
+        .collapse.collpase-close.border.border-base-300.bg-base-100.rounded-box.collapse-plus.mx-auto(tabindex='0')
+
+            input(type='checkbox')
+
+            .collapse-title.font-semibold.text-xl.tracking-wide(class='md:text-2xl xl:text-3xl')
+                span.english-text Custom Settings
+                span.filipino-text!= fil_title
+
+            .collapse-content
+                span.text-base(class='md:text-lg xl:text-xl')
+                .grid.grid-cols-3.gap-4(class='md:px-28')
+                    .row-span-2.text-center.self-center
+                        input#room_height.bg-dirty-white.p-5.rounded-full.w-full.text-base.text-midnight-blue.leading-tight(class='md:text-xl focus:outline-none focus:shadow-outline' type='number' placeholder='Height')
+                        span.text-base(class='md:text-xl')  meters
+                    img.row-span-2.col-span-2(src='/static/images/room-size/room_size.png')
+                    .col-span-1
+                    .col-span-1
+                        input#room_length.bg-dirty-white.p-5.rounded-full.w-full.text-base.text-midnight-blue.leading-tight(class='md:text-xl focus:outline-none focus:shadow-outline' type='number' placeholder='Length')
+                        span.text-base(class='md:text-xl')  meters
+                    .col-span-1
+                        input#room_width.bg-dirty-white.p-5.rounded-full.w-full.text-base.text-midnight-blue.leading-tight(class='md:text-xl focus:outline-none focus:shadow-outline' type='number' placeholder='Width')
+                        span.text-base(class='md:text-xl')  meters

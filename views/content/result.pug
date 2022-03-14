@@ -1,5 +1,6 @@
 extends ../estimation.pug
 include ../estimation-mixins.pug
+include ./content-mixins.pug
 
 block page-title
     span.english-text Results
@@ -31,6 +32,27 @@ block result
         span.text-white
             span#engDescription.english-text
             span#filDescription.filipino-text
+
+    section.mx-auto.flex.align-items-center.justify-center(class='md:py-10')
+        .container.space-y-10
+            .section.text-center
+                h1.text-3xl.font-semibold.text-center.py-7(class='md:text-4xl xl:text-5xl')   Frequently Asked Questions
+            .section.space-y-4
+
+                +collapse_item( "How do I interpret my risk score?",
+                                "Paano ko bibigyang-kahulugan ang aking nakuhang antas ng panganib?",
+                                "Your score is an approximation of your chance in acquiring the virus during your planned activity based on the parameters you have chosen. Do take note that the estimation only considers one event, which means it can accumulate due to other external circumtances (e.g. travelling to arrive at the activity’s location).",
+                                "Ang marka sa panganib ay isa lamang pagtatantiya o approximation ng iyong pagkakataon para mahawa sa COVID-19 habang isinasagawa ang nakaplanong aktibidad. Ngunit, alalahanin na ang pagtatantiya ay isinasaalang-alang lamang ang isang kaganapan na maaring maipon dahil sa iba pang panlabas na pangyayari (Hal. paglalakbay gamit ang pampublikong sasakyan upang makarating sa lokasyon ng aktibidad).")
+
+                +collapse_item( "Why did I get high/very high risk score despite how safe my values are?",
+                                "Bakit pa rin ako nakakuha ng mataas/napakataas na panganib sa kabila ng kung gaano kaligtas ang aking mga halaga na inilagay sa estimator?",
+                                "The risk estimator unfortunately does not take into consideration the vaccination, social distancing, and other precautionary measures of the user. It would be possible to implement these if the researchers have enough experience to do so. For now, the website serves as a proof of concept as to how one can predict their chance of acquiring the virus and how a risk estimator website should be implemented for a smooth user experience.",
+                                "Sa kasamaang palad, hindi isinasaalang-alang ng risk estimator ang pagbabakuna, social distancing, at iba pang mga hakbang sa pag-iingat ng user. Posibleng maipatupad ang mga ito kung ang mga mananaliksik ay may sapat na karanasan upang gawin ito. Sa ngayon, ang website ay nagsisilbing patunay ng konsepto kung paano matantiya ng isang tao ang kanilang pagkakataong makuha ang virus at kung paano dapat ipatupad ang isang website ng risk estimator para sa isan maayos na karanasan.")
+
+                +collapse_item( "Should I no longer practice precautionary measures when my risk score is low/very low?",
+                                "Hindi na ba dapat ako magsagawa ng mga hakbang sa pag-iingat kapag ang aking antas sa panganib ay mababa/napakababa?",
+                                "A low or very low risk score does not guarantee that you won’t be infected by the COVID-19 virus. It is still advised to practice precautionary measures despite a low risk score as this website does not replace any medical and government advice when it comes to following the protocols. ",
+                                "Ang markang mababa o napakababang panganib ay hindi ginagarantiya na hindi ka na mahahawaan ng COVID-19. Magsagawa pa rin ng mga hakbang sa pag-iingat sa kabila ng mababang marka sapagkat hindi pinapalitan ng website na ito ang anumang payong medikal at gobyerno pagdating sa pagsunod sa mga protokol.")
 
 
     section.h-auto.px-8.py-3.flex.flex-col(class='sm:px-20 lg:px-96 ')
