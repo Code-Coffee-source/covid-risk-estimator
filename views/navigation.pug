@@ -1,6 +1,7 @@
 header(class="px-8 sm:px-20 lg:px-72 font-sans text-midnight-blue bg-transparent")
 
     div(class="navbar my-2 space-y-6 px-0")
+
         div(class="flex-1")
             a(href="/"  class="tracking-tighter text-3xl font-black text-midnight-blue flex")
                 span(class="font-bold flex items-center space-x-1")
@@ -28,10 +29,10 @@ header(class="px-8 sm:px-20 lg:px-72 font-sans text-midnight-blue bg-transparent
                         i(class="fas fa-question inline-block w-5 mr-2")
                         | How To Use
 
-        div(class="flex-none ")
+        div.flex.items-center(style="margin: 0")
 
-            div(class="dropdown dropdown-end")
-                button.langMenu.bg-gold.text-white(class="text-base tracking-tight md:text-lg xl:text-xl capitalize")
+            div(class="dropdown dropdown-end " )
+                button.langMenu.bg-gold.text-white(class="text-base tracking-tight md:text-lg xl:text-xl capitalize mx-5" style="width:8rem;")
                     span#langMenuText English
                     i.fas.fa-caret-down
 
