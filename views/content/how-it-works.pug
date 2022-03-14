@@ -53,40 +53,52 @@ section.mx-auto.flex.align-items-center.justify-center(class='md:py-10')
         .section.space-y-4
 
             +collapse_item( "Aspire is based on what studies?",
-                            "Saan ko makikita at magagamit ang risk estimator nila Jimenez and Peng",
+                            "Ang aspire ay batay sa ano-anong mga pag-aaral?",
                             "The estimator used on the website is based on <a href='https://tinyurl.com/covid-estimator' class='btn-link text-midnight-blue'> Jimenez and Peng’s COVID-19 Aerosol Transmission Estimator. </a>" +
-                            "The actual estimation’s interface is inspired from Brown-Lifespan Center for Digital Health’s MyCOVIDRisk App. " +
+                            "The actual estimation’s interface is inspired from <a href='https://tinyurl.com/covid-estimator' class='btn-link text-midnight-blue'> Brown-Lifespan Center for Digital Health’s MyCOVIDRisk App. </a>" +
                             "Additional research were done by the researchers to replace US-based parameters to the Philippine setting. ",
-                            "Maari mo itong puntahan <a href='/' class='btn'>dito</a>")
+                            "Ang estimator na ginagamit ng website ay batay sa <a href='https://tinyurl.com/covid-estimator' class='btn-link text-midnight-blue'>  Aerosol Transmission Estimator nina Jimenez at Peng. </a>" +
+                            "Ang aktwal na interface naman ng website ay hango sa <a href='https://tinyurl.com/covid-estimator' class='btn-link text-midnight-blue'> MyCOVIDRisk Application ng Brown-Lifespan Center for Digital Health. </a>." +
+                            "Karagdagang pananaliksik ang ginawa ng mga mananaliksik upang palitan ang mga parameter na naaayon sa kapaligiran ng Pilipinas. ")
 
             +collapse_item( "What are the risk values and ranges?",
-                            "Maglagay ng translasyon dito",
+                            "Ano ang mga halaga at saklaw ng antas ng panganib?",
                             "No studies have yet to show the specific risk values for COVID-19. " +
                             "The risk score ranges were adapted from Brown-Lifespan Center for Digital Health’s MyCOVIDRisk App which they based on a survey. The risk ranges are as follows: </br>" +
                             "<ul> <li> &#8226; Very Low Risk = 0.00001% </li> " +
                             "<li> &#8226; Low Risk = 0.01 - 0.00001% </li> <li> &#8226; Medium Risk = 0.01 - 0.1% </li>" +
                             "<li> &#8226; High Risk = 0.1 - 5% </li> <li> &#8226; Very High Risk = 5% </li> </ul>",
-                            "Maglagay ng translasyon dito")
+                            "Wala pang pag-aaral ang nagpapakita kung ano ang partikular na halaga ng panganib ng COVID-19." +
+                            "Dahil dito, ang halaga at saklaw ng panganib ay inangkop mula sa MyCOVIDRisk App ng Brown-Lifespan Center for Digital Health, kung saan binatay nila ang mga ito sa isang survey. Ang mga saklaw at halaga ng panganib ay ang sumusunod: " +
+                            "<ul> <li> &#8226; Very Low Risk = 0.00001% </li> " +
+                            "<li> &#8226; Low Risk = 0.01 - 0.00001% </li> <li> &#8226; Medium Risk = 0.01 - 0.1% </li>" +
+                            "<li> &#8226; High Risk = 0.1 - 5% </li> <li> &#8226; Very High Risk = 5% </li> </ul>")
 
             +collapse_item( "Are the results accurate?",
-                            "Maglagay ng translasyon dito",
+                            "Ang resulta ba na makukuha ko sa website ay tumpak?",
                             "The estimator should not be viewed as accurate to real life because it only estimates the probability of one’s risk. " +
                             "There are also many outside factors that cannot be put into the equation such as the user’s vaccination status, specific meters of social distancing, and precautionary measures performed by the user. <br/> " +
                             "On the other hand, Aspire is accurate to Jimenez and Peng's risk estimator where the formulae used were based. " +
                             "Shown below is a comparison between the results of aspire and Jimenez and Peng’s estimator. " +
                             " <img class='w-full p-10 shadow m-2' src='static/images/how-it-works/formula-test-log.jpg' alt='image'>  " +
                             "The percentage error is very minimal, thus it is accurate to Jimenez and Peng's risk estimator. ",
-                            "Maglagay ng translasyon dito")
+                            "Ang estimator ay hindi tumpak sa totoong buhay dahil ito ay magaspang na kalkulation lamang ng posibilidad na panganib ng isang tao. "+
+                            "Marami ring panlabas na salik ang hindi kaya isaalang-alang ng website tulad ng <i>status</i> ng pagbabakuna ng <i>user</i> <i>social distancing</i>, at mga hakbang sa pag-iingat na ginagawa ng <i>user</i>. " +
+                            "Sa kabilang banda, ang aspire ay tumpak sa <i>risk estimator</i> nina Jimenez at Peng. Ipinapakita sa ibaba ang isang paghahambing sa pagitan ng mga resulta ng aspire at ang estimator ni Jimenez at Peng. " +
+                            " <img class='w-full p-10 shadow m-2' src='static/images/how-it-works/formula-test-log.jpg' alt='image'>  " +
+                            " Ang error sa porsyento ay napakaliit, kaya tumpak ito sa risk estimator ni Jimenez at Peng. ")
 
             +collapse_item( "What are the standard values used for each activity preset?",
-                            "Maglagay ng translasyon dito",
+                            "Ano ang karaniwang mga halaga ng bawat aktibidad na binigay ng aspire?",
                             " <img class='w-full p-10 shadow m-2' src='static/images/how-it-works/activity-preset-values.jpg' alt='image'>  " +
                             "The activity level for each activity preset were based on Jimenez and Peng's risk estimator values." +
                             "The floor areas were obtained from various Philippine-based builfings. Room heights were based on the National Building Code of the Philippines ",
-                            "Maglagay ng translasyon dito")
+                            " <img class='w-full p-10 shadow m-2' src='static/images/how-it-works/activity-preset-values.jpg' alt='image'>  " +
+                            " Ang bawat antas ng aktibidad ay nakabatay mula sa mga halaga ng risk estimator nina Jimenez at Peng. Ang mga lawak ng sahig ay nanggagaling sa iba’t ibang gusaling nakabase sa Pilipinas. Ang taas ng mga kwarto ay batay sa National Building Code ng Pilipinas.")
 
             +collapse_item( "What are the standard values used for each ventilation preset?",
-                            "Maglagay ng translasyon dito",
+                            "Ano ang karaniwang mga halaga ng bawat bentilasyon na binigay ng aspire?",
                             " <img class='w-full p-10 shadow m-2' src='static/images/how-it-works/ventilation-preset-values.jpg' alt='image'>  " +
                             "Ventilation with outside air values were grabbed from 2010 PSVARE Standards in the Philippine Green Buildiong Code.",
-                            "Maglagay ng translasyon dito")
+                            " <img class='w-full p-10 shadow m-2' src='static/images/how-it-works/ventilation-preset-values.jpg' alt='image'>  " +
+                            "Ang mga halaga ng bentilasyon kasama ang hangin sa labas ay nakuha mula sa 2010 PSVARE Standards in the Philippine Green Building Code.")
