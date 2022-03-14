@@ -46,6 +46,7 @@ let titles = {
     'home': 'Welcome to ASPIRE',
     'how-to-use': 'How to Use',
     'how-it-works': 'How it Works',
+    '404': 'Page not found!'
 }
 
 // for /estimates/:key routes
@@ -122,7 +123,7 @@ app.get('/get-ajax-values', function(request, response) {
         // asynchronous to prevent blocking when there are multiple
         // clients requesting different stuff
         fs.readFile(pugPath, function(error, data) {
-            if (error)  return response.send(JSON.stringify(values));
+            if (error)  return response.json({ notFound: true });
 
             let content = pug.compile(data.toString('utf8'), {filename: pugPath})({ data: datapoints });
             values.content = content;
@@ -153,7 +154,7 @@ app.get(['/', '/:page', '/estimate/:key'], function(request, response) {
     title = key in estimatesTitle ? estimatesTitle[key] : title;
 
     if (title == titles['home'] && (page != 'home' || key)) {
-        response.render('404');
+        response.render('index.pug', { title: '404' });
     } else {
         response.render('index.pug', { title, data: datapoints });
     }

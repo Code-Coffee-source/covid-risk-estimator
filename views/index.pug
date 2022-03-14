@@ -59,6 +59,8 @@ html
 
         include navigation
         div(id="root-content-loader")
+            if page == '404'
+                include content/404.pug
 
         .hidden#loader-wrapper
             img.lds-heart(src='/static/images/loader.png')

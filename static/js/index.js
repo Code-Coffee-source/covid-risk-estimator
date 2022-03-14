@@ -26,6 +26,8 @@ function loadAjax(path, callback) {
         url: '/get-ajax-values?url=' + path,
         cache: false
     }).done(function(data) {
+        if (data.notFound) goTo('404');
+
         isLoading = false;
 
         if (data.content) {
@@ -245,5 +247,6 @@ function setActiveCard(cardId) {
     });
 }
 
+if (!localStorage.getItem('language')) localStorage.setItem('language', 'english');
 bindSeamlessLinks();
 goTo(window.location.pathname); // this is to make the page load the javascript files also loads the right page
