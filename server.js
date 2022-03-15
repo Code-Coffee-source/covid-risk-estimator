@@ -206,6 +206,8 @@ function isItNumber(string) {
 // this is used on the POST request body
 // in order to validate it
 function validateFields(object) {
+
+
     if (!findByProperty('activityLocation', 'Code', object['region-code']) ) return false;
 
     if (!findByProperty('activityPlanned', 'Code', object['activity-planned-code']) ) {

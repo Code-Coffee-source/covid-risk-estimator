@@ -18,7 +18,6 @@
 
     nextBtn.on('click', function() {
         var currNum = parseInt($(this).attr('href').split("_")[1])
-        console.log(currNum)
 
         if (!(currNum == parseInt($('.carousel-item').length)+1)) {
             nextBtn.attr('href', '#item_'+(currNum+1));
@@ -35,7 +34,6 @@
 
     backBtn.on('click', function() {
         var currNum = parseInt($(this).attr('href').split("_")[1])
-        console.log(currNum)
 
         if (!(currNum == 0)) {
             nextBtn.attr('href', '#item_'+(currNum+1))

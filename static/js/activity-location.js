@@ -25,8 +25,6 @@
             regionButton.find('span').text(event.target.innerText);
             regionHeader.html(event.target.innerText);
 
-            console.log(event.target.innerText)
-
             if (isDeviceIOS) {
                 dropdown.removeClass('active');
             } else {
