@@ -38,9 +38,9 @@ block input
                 span.filipino-text
                     | Gaano katindi ang aktibidad?
 
-            .inline.dropdown.dropdown-end
+            .dropdown.dropdown-end
 
-                button.btn.btn-circle.btn-sm.bg-green.tooltip-btn(tabindex='0')
+                button.bg-green.tooltip-btn(tabindex='0')
                     i.fas.fa-question
 
 
@@ -50,6 +50,7 @@ block input
                             | The intensity of the activity refers to the nature of what the people will be doing for the planned activity (e.g. talking, sleeping, walking, & running).
                         p.filipino-text
                             | Ang tindi ng aktibidad ay tumutukoy sa paraan ng aksyon ng mga tao sa pagganap ng aktibidad (Hal. pakikipag-usap, pagtulog, paglalakad, at pagtakbo).
+
 
     .w-full.carousel
         each level, index in data.activityLevels
@@ -63,7 +64,7 @@ block input
 
                             .flex-col
 
-                                figure.p-0.m-0(class='sm:max-h-80 md:h-80')
+                                figure.p-0.m-0.act_level_img(class='sm:max-h-80 md:h-80')
                                     img.p-0.m-0.w-full(class='md:h-full' src='/static/images/activity-level/' + level['Name'] + '.svg' alt=level['Name'])
                                 .card-body
                                     h2.card-title.text-3xl.flex.space-x-3(id='name_' + index class=(index === 0 ? "curr": undefined))
