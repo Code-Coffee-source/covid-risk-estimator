@@ -73,7 +73,7 @@
 .collapse:not(.collapse-close)
   input[type="checkbox"]:checked
   ~ .collapse-title {
-  color: #00C48A;
+  color: #337970;
 }
 
 .collapse-content {
