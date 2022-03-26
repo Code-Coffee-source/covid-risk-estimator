@@ -31,11 +31,8 @@
 }
 
 @media (max-width: 768px) {
-    .back-btn, .next-btn {
-        display: none;
-    }
 
-    figure {
+    .act_level_img {
         display: none;
     }
 
