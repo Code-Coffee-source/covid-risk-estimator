@@ -33,6 +33,28 @@ block result
             span#engDescription.english-text
             span#filDescription.filipino-text
 
+    section.h-auto.px-8.py-3.flex.flex-col(style="margin-bottom: 1.5rem;" class='sm:px-20 lg:px-96 ')
+        .alert.alert-warning.shadow-lg
+            div
+                svg.stroke-current.flex-shrink-0.h-6.w-6(xmlns='http://www.w3.org/2000/svg', fill='none', viewbox='0 0 24 24')
+                    path(stroke-linecap='round', stroke-linejoin='round', stroke-width='2', d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z')
+                span.english-text
+                    | Warning: This is only an estimation and should not replace advice from medical professionals.
+                span.filipino-text
+                    | Babala: Ito ay pagtataniya lamang, huwag itong ipagpalit sa payo ng mga propesyonal.
+
+    section.px-8.py-3.flex.flex-col.text-midnight-blue.text-center.space-y-5(class='sm:px-20 lg:px-96 ')
+        h3.font-bold.text-xl
+            span.english-text Want to test other values?
+            span.filipino-text Gustong subukan ang iba pang mga halaga?
+        span.btn-container.space-x-2
+            a.link-btn.shadow-sm.bg-dirty-white(href="/estimate/5" type='button')
+                span.english-text Go back to summary
+                span.filipino-text Bumalik sa buod
+            a.link-btn.shadow-sm.bg-dirty-white(href="/estimate/1" type='button' id="new-risk")
+                span.english-text  Get new risk level
+                span.filipino-text Kumuha ng bagong risk level
+
     section.mx-auto.flex.align-items-center.justify-center(class='md:py-10')
         .container.space-y-10
             .section.text-center
@@ -54,30 +76,58 @@ block result
                                 "A low or very low risk score does not guarantee that you won’t be infected by the COVID-19 virus. It is still advised to practice precautionary measures despite a low risk score as this website does not replace any medical and government advice when it comes to following the protocols. ",
                                 "Ang markang mababa o napakababang panganib ay hindi ginagarantiya na hindi ka na mahahawaan ng COVID-19. Magsagawa pa rin ng mga hakbang sa pag-iingat sa kabila ng mababang marka sapagkat hindi pinapalitan ng website na ito ang anumang payong medikal at gobyerno pagdating sa pagsunod sa mga protokol.")
 
+    .divider
 
-    section.h-auto.px-8.py-3.flex.flex-col(class='sm:px-20 lg:px-96 ')
-        .alert.alert-warning.shadow-lg
-            div
-                svg.stroke-current.flex-shrink-0.h-6.w-6(xmlns='http://www.w3.org/2000/svg', fill='none', viewbox='0 0 24 24')
-                    path(stroke-linecap='round', stroke-linejoin='round', stroke-width='2', d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z')
-                span.english-text
-                    | Warning: This is only an estimation and should not replace advice from medical professionals.
-                span.filipino-text
-                    | Babala: Ito ay pagtataniya lamang, huwag itong ipagpalit sa payo ng mga propesyonal.
+    section.mx-auto.flex.align-items-center.justify-center(class='md:py-10')
+        .container.space-y-5
+            .section.text-center
+                h1.text-3xl.font-semibold.text-center(class='md:text-4xl xl:text-5xl') Infographics
 
-    section.px-8.py-3.flex.flex-col.text-midnight-blue.text-center(class='sm:px-20 lg:px-96 ')
-        h3.font-bold.text-xl
-            span.english-text Want to test other values?
-            span.filipino-text Gustong subukan ang iba pang mga halaga?
-        span.btn-container
-            a.link-btn.shadow-sm.bg-dirty-white(href="/estimate/5" type='button')
-                span.english-text Go back to summary
-                span.filipino-text Bumalik sa buod
-            a.link-btn.shadow-sm.bg-dirty-white(href="/estimate/1" type='button' id="new-risk")
-                span.english-text  Get new risk level
-                span.filipino-text Kumuha ng bagong risk level
+            .w-full.carousel
 
-    section.px-8.py-2.flex.flex-col.text-gray-400.text-left.leading-snug.space-y-4(class='sm:px-20 lg:px-96 ')
+                div.w-full.carousel-item(id="item_1")
+                    .carousel-container
+                        .card.card-bordered.text-midnight-blue.shadow.mx-auto
+                            div.flex.items-center
+
+                                a.h-full.flex.items-center.back-btn(href="#item_3")
+                                    i.fas.fa-angle-left.fa-2x
+
+                                figure.py-10
+                                    img.rounded-xl.carousel-image(src="/static/images/safety-tips/safety_tips_1.png")
+
+                                a.h-full.flex.items-center.next-btn(href="#item_2")
+                                    i.fas.fa-angle-right.fa-2x
+
+                div.w-full.carousel-item(id="item_2")
+                    .carousel-container
+                        .card.card-bordered.text-midnight-blue.shadow.mx-auto
+                            div.flex.items-center
+                                a.h-full.flex.items-center.back-btn(href="#item_1")
+                                    i.fas.fa-angle-left.fa-2x
+
+                                figure.py-10
+                                    img.rounded-xl.carousel-image(src="/static/images/safety-tips/safety_tips_2.jpg")
+
+                                a.h-full.flex.items-center.next-btn(href="#item_3")
+                                    i.fas.fa-angle-right.fa-2x
+
+                div.w-full.carousel-item(id="item_3")
+                    .carousel-container
+                        .card.card-bordered.text-midnight-blue.shadow.mx-auto
+
+                                div.flex.items-center
+                                    a.h-full.flex.items-center.back-btn(href="#item_2")
+                                        i.fas.fa-angle-left.fa-2x
+
+                                    figure.py-10
+                                        img.rounded-xl.carousel-image(src="/static/images/safety-tips/safety_tips_3.jpg")
+
+                                    a.h-full.flex.items-center.next-btn(href="#item_1")
+                                        i.fas.fa-angle-right.fa-2x
+
+
+    section.px-8.py-2.flex.flex-col.text-gray-400.text-left.leading-snug.space-y-4(style="margin-top: 1.5rem; margin-bottom: 1.5rem;" class='sm:px-20 lg:px-96 ')
         .alert.alert-success.shadow-lg
             div
                 svg.stroke-current.flex-shrink-0.h-6.w-6(xmlns='http://www.w3.org/2000/svg', fill='none', viewbox='0 0 24 24')
@@ -87,17 +137,67 @@ block result
                 span.filipino-text
                     | Maraming salamat sa paggamit ng Aspire! Maaaring suportahan ang mga mananaliksik sa pamamagitan ng pagsagot sa isang maikling survey upang makatulong na mapabuti ang website!
 
-        section.text-white.btn-container
+    section.px-8.flex.flex-col.text-gray-400.text-left.leading-snug.space-y-4(class='sm:px-20 lg:px-96 ')
+        section.text-white.btn-container.space-x-2
             a.link-btn.bg-midnight-blue(href='/how-it-works' type='button')
                 span.english-text
                     | Learn how Aspire works
                 span.filipino-text
-                    | Matuto kung paano gumagana ang Aspire
+                    | Paano gumagana ang Aspire
             a.link-btn.bg-green(href='https://forms.gle/mknhWeSdLcBHNc1m7' type='button')
                 span.english-text
                     | Answer Survey
                 span.filipino-text
                     | Sagutin ang Survey
 
+    .divider
+
+    section.px-8.flex.flex-col.text-midnight-blue.text-center.space-y-5( style="margin-bottom: 1rem;" class='sm:px-20 lg:px-96 ')
+        h3.font-bold.text-xl
+            span.english-text Links to important PH Literature
+            span.filipino-text Mga link para sa mahahalagang literatura ng Pilipinas ukol sa COVID-19
+
+        .section.space-y-4.mx-auto.text-center(style="max-width: 50rem")
+            ul.font-medium.space-y-5(style="max-width: 50rem")
+                li
+                    a.btn-link.font-black(href="https://www.covid19.gov.ph/")
+                        span.english-text COVID-19 Dashboard
+                        span.filipino-text Dashboard ng COVID-19
+                li
+                    a.btn-link.font-black(href="https://doh.gov.ph/2019-nCoV")
+                        span.english-text Department of Health Updates on COVID-19
+                        span.filipino-text Mga Update ng Departamento ng Kalusugan para sa COVID-19
+                li
+                    a.btn-link.font-black(href="https://www.who.int/philippines/emergencies/covid-19-response-in-the-philippines/information")
+                        span.english-text Latest Public Guidance and Health Advice from World Health Organization Western Pacific for the COVID-19 outbreak
+                        span.filipino-text Pinakabagong Public Guidance at Health Advice mula sa World Health Organization Western Pacific para sa COVID-19 outbreak
+
+                li
+                    a.btn-link.font-black(href="https://doh.gov.ph/vaccines")
+                        span.english-text COVID-19 Vaccines
+                        span.filipino-text Mga bakuna laban sa COVID-19
+
+
+
+
+    footer.bg-midnight-blue.mx-auto.flex.align-items-center.justify-center.text-white(class='md:py-10')
+
+        .container.grid.grid-cols-1.gap-5.py-10.px-10(class='md:grid-cols-2 lg:grid-cols-4')
+
+            div.flex.flex-col.font-bold
+                span Aspire
+                span &#169; 2021
+
+            div.flex.flex-col.font-bold
+                span Icons by Icons8 and FontAwesome
+                span Illustrations by Freepik
+
+            div.flex.flex-col
+                span.font-bold Thanks to Jimenez and Peng
+                span who created the estimator model
+
+            div.flex.flex-col
+                span.font-bold Thanks to Mr. Ralph Louis Gopez
+                span who fixed major technical issues in the website and assisted in its development
 block pagination
     |

@@ -46,11 +46,12 @@
 
     if (maskPercentageAnswer) {
         maskSlider.val(parseInt(maskPercentageAnswer.replace('%', '')));
-        maskSliderValue.text(maskPercentageAnswer);
+        maskSliderValue.val(maskPercentageAnswer);
+        console.log(maskPercentageAnswer)
     } else {
         // default values for this page
         maskSlider.val(50);
-        maskSliderValue.text('50%');
+        maskSliderValue.val('50%');
         storeAnswer('mask-percentage', '50%');
     }
 
