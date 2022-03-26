@@ -22,12 +22,12 @@
         if (!(currNum == parseInt($('.carousel-item').length)+1)) {
             nextBtn.attr('href', '#item_'+(currNum+1));
             backBtn.attr('href', '#item_'+(currNum-1));
-
+            numBtn.html(currNum);
 
         };
 
         if (!(currNum == parseInt($('.carousel-item').length)+1)) {
-            numBtn.html(currNum);
+
         };
 
     });
