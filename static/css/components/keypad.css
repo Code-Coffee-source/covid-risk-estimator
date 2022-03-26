@@ -1,0 +1,21 @@
+.keypad-2r {
+    grid-template-columns: 11rem 11rem 11rem;
+    grid-template-rows: 11rem 11rem;
+}
+
+.keypad-3r {
+    grid-template-columns: 11rem 11rem 11rem;
+    grid-template-rows: 11rem 11rem 11rem;
+}
+
+@media (max-width: 768px) {
+    .keypad-2r {
+        grid-template-columns: 7rem 7rem 7rem;
+        grid-template-rows: 7rem 7rem;
+    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+    .keypad-3r {
+        grid-template-columns: 7rem 7rem 7rem;
+        grid-template-rows: 7rem 7rem 7rem;
+    }
+
+}

@@ -1,0 +1,5 @@
+@media (max-width: 768px) {
+    #room_height::placeholder, #room_width::placeholder, #room_length::placeholder {
+        color: transparent !important;
+    }
+}

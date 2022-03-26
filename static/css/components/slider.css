@@ -1,0 +1,74 @@
+.range {
+    background: transparent;
+    overflow: hidden;
+    -webkit-appearance: none;
+    --range-shdw: var(--bc);
+    border-radius: 9999px;
+    height: 2.5rem;
+
+}
+
+.range:focus-visible::-moz-range-thumb {
+    --focus-shadow: 0 0 0 6px hsl(var(--b1)) inset, 0 0 0 2rem hsl(var(--range-shdw)) inset;
+}
+
+.range::-webkit-slider-runnable-track {
+    height: 2.5rem;
+    width: 100%;
+    background-color: hsla(var(--bc) / 0.1);
+    border-radius: 9999px;
+}
+
+.range::-moz-range-track  {
+    height: 2.5rem;
+    width: 100%;
+    background-color: hsla(var(--bc) / 0.1);
+    border-radius: 9999px;
+}
+
+.range::-webkit-slider-thumb{
+    background-color: hsl(var(--b1));
+    position: relative;
+    height: 2.5rem;
+    width: 2.5rem;
+    border: none;
+    border-radius: 9999px;
+    transition: all 300 ease-in-out;
+
+    -webkit-appearance: none;
+    top: 50%;
+    color: hsl(var(--range-shdw));
+    transform: translateY(-50%);
+    --filler-size: 400rem;
+    --filler-offset: 1rem;
+    box-shadow: 0 0 0 5px hsl(var(--range-shdw)) inset, var(--focus-shadow, 0 0), calc(var(--filler-size) * -1 - var(--filler-offset)) 0 0 var(--filler-size);
+}
+
+.range::-moz-range-thumb {
+    background-color: hsl(var(--b1));
+    position: relative;
+    height: 2.5rem;
+    width: 2.5rem;
+    border: none;
+    transition: all 300 ease-in-out;
+    border-radius: 9999px;
+    -webkit-appearance: none;
+    top: 50%;
+    color: hsl(var(--range-shdw));
+    transform: translateY(-50%);
+    --filler-size: 100rem;
+    --filler-offset: 1rem;
+    box-shadow: 0 0 0 3px hsl(var(--range-shdw)) inset, var(--focus-shadow, 0 0), calc(var(--filler-size) * -1 - var(--filler-offset)) 0 0 var(--filler-size);
+}
+
+.range-primary {
+    --range-shdw: var(--p)
+}
+
+.range-secondary {
+    --range-shdw: var(--s);
+}
+
+.range-accent {
+    --range-shdw: var(--a)
+}
