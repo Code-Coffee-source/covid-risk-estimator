@@ -10,7 +10,7 @@
         var nextNum = parseInt($(this).attr('href').split("_")[1])
         var backNum = parseInt(backBtn.attr('href').split("_")[1])
 
-        if (!(nextNum == parseInt($('.carousel-item').length))) {
+        if (!(nextNum == parseInt($('.carousel-item').length)+1)) {
 
             nextBtn.attr('href', '#slide_'+(nextNum+1));
             backBtn.attr('href', '#slide_'+(backNum+1));
@@ -25,7 +25,7 @@
         var nextNum = parseInt(nextBtn.attr('href').split("_")[1])
         var backNum = parseInt($(this).attr('href').split("_")[1])
 
-        if (!(backNum == -1)) {
+        if (!(backNum == 0)) {
             nextBtn.attr('href', '#slide_'+(nextNum-1));
             backBtn.attr('href', '#slide_'+(backNum-1));
             numBtn.html(backNum)
