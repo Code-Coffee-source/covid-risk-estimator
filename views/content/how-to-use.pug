@@ -1,164 +1,279 @@
 include ./content-mixins.pug
-.flex.flex-col.justify-center.items-center.px-20.font-sans.text-midnight-blue.pb-5.space-y-10(npclass='md:px-72 lg:px-96')
+
+.flex.flex-col.items-center.justify-center.p-5.px-20.font-sans.text-midnight-blue.pb-5.space-y-10(npclass='md:px-72 lg:px-96')
     section.mx-auto.flex.align-items-center.justify-center(class='md:py-10')
         .container.space-y-10
             .section.text-center
-                h1.text-3xl.font-semibold.text-center.py-7(class='md:text-4xl xl:text-5xl')  How It Works
+                h1.text-3xl.font-semibold.text-center.py-7(class='md:text-4xl xl:text-5xl')
+                    span.english-text
+                        | How It Works
+                    span.filipino-text
+                        | Paano Ito Gumagana?
+
+section.info
+    .info-top-circle
+
+    section.mx-auto.flex.align-items-center.justify-center.text-white(class='md:py-10')
+        .container.space-y-10
+
+            video.p-10(controls)
+                source(src="/static/videos/how-to-use/ASPIRE Tutorial Video.mp4"  type="video/mp4")
 
 
+            .section.text-center
+                span.text-base.pr-20.text-justify(class='md:text-lg xl:text-2xl')
+                    span.english-text
+                        | For mobile devices, open the video full screen and rotate your device to landscape mode.
+                    span.filipino-text
+                        | Para sa mga gumagamit ng mobile device, ifullscreen ang bideo at gawing "landscape mode" ang iyong mobile.
 
-.flex.flex-col.justify-center.items-center.px-20.font-sans.text-midnight-blue.pb-5.space-y-10(class='md:px-72 lg:px-96')
+    .info-bottom-circle
 
-    .w-full.carousel
+section.mx-auto.flex.align-items-center.justify-center(class='md:py-10')
+    .container.space-y-5
 
-        +carousel_item( "item_1",
-                        "1. Select the “Get Started” button to begin the estimation process.",
-                        "1. Maglagay ng translasyon dito",
-                        "/static/images/screenshots/homepage (screenshot 1).png")
+        .w-full.carousel
 
-        +carousel_item( "item_2",
-                        "2. You will first be met with a checklist before starting the estimation. Check the boxes once the conditions are met.",
-                        "2. Maglagay ng translasyon dito",
-                        "/static/images/screenshots/consent (screenshot 2).png")
+            div.carousel-item.w-full(id='slide_1')
+                .carousel-container.mx-auto.p-10
+                    .card.card-bordered.text-midnight-blue.shadow.mx-auto
 
-        +carousel_item( "item_3",
-                        "3. Estimating your risk will be done in only 5 steps. The progress bar will indicate which step you are in.",
-                        "3. Maglagay ng translasyon dito",
-                        "/static/images/screenshots/progress (screenshot 3).png")
+                        .flex-col.items-center.justify-center.p-5
 
-        +carousel_item( "item_4",
-                        "4. Step 1 is the activity location. Choose from the dropdown box what region the activity will take place.",
-                        "4. Maglagay ng translasyon dito",
-                        "/static/images/screenshots/location (screenshot 4).png")
+                            figure
+                                img.screenshot-image.desktop( src='/static/images/screenshots/desktop/screenshot_1.png')
+                                img.mobile( src='/static/images/screenshots/mobile/screenshot_1.png')
 
-        +carousel_item( "item_5",
-                        "5. Step 2 is the activity planned. Select from the choices of your planned activity during the pandemic.",
-                        "5. Maglagay ng translasyon dito",
-                        "/static/images/screenshots/planned activity (screenshot 5).png")
+                            .card-body
+                                h6.font-black
+                                    span.english-text 1. Select the “Get Started” button to begin the estimation process.
+                                    span.filipino-text 1. Piliin ang “Magsimula” na pindutan upang simulan ang pagtatantiya.
 
-        +carousel_item( "item_6",
-                        "6. Step 3 is the time and people. Enter the appropriate values in the input fields.",
-                        "6. Maglagay ng translasyon dito",
-                        "/static/images/screenshots/time and people (screenshot 8).png")
+            div.carousel-item.w-full(id='slide_2')
+                .carousel-container.p-10
+                    .card.card-bordered.text-midnight-blue.shadow.mx-auto
+                        div.flex.items-center.justify-center
 
-        +carousel_item( "item_7",
-                        "7. Step 4 is the masks. Drag the slider to adjust the amount of people wearing masks and choose the type of mask they wear.",
-                        "7. Maglagay ng translasyon dito",
-                        "/static/images/screenshots/masks (screenshot 9).png")
+                            .flex-col.items-center.justify-center.p-5
 
-        +carousel_item( "item_8",
-                        "8.  A summary is shown before the results. You may take this time to review and edit your results.",
-                        "8. Maglagay ng translasyon dito",
-                        "/static/images/screenshots/summary (screenshot 10).png")
+                                figure.screenshot-image
+                                    img.desktop( src='/static/images/screenshots/desktop/screenshot_2.png')
+                                    img.mobile( src='/static/images/screenshots/mobile/screenshot_2.png')
 
-        +carousel_item( "item_9",
-                        "9. Step 5 is the result. You are finally done!",
-                        "9. Maglagay ng translasyon dito",
-                        "/static/images/screenshots/results (screenshot 11).png")
+                                .card-body
+                                    h6.font-black
+                                        span.english-text 2. You will first be met with a checklist before starting the estimation. Check the boxes once the conditions are met.
+                                        span.filipino-text 2. Basahin ng mabuti ang checklist bago gamitin ang estimator. Lagyan ng tsek ang mga kahon kapag natugunan na ang mga binigay na kondisyon.
 
-        +carousel_item( "item_10",
-                        "10. Step 5 is the result. You are finally done!",
-                        "10. Maglagay ng translasyon dito",
-                        "/static/images/screenshots/new risk level (screenshot 12).png")
+            div.carousel-item.w-full(id='slide_3')
+                .carousel-container.p-10
+                    .card.card-bordered.text-midnight-blue.shadow.mx-auto
+                        div.flex.items-center.justify-center
 
+                            .flex-col.items-center.justify-center.p-5
 
+                                figure.screenshot-image
+                                    img.desktop( src='/static/images/screenshots/desktop/screenshot_3.png')
+                                    img.mobile( src='/static/images/screenshots/mobile/screenshot_3.png')
 
-    .flex.justify-center.w-full.py-2.gap-5
+                                .card-body
 
-        a#start-btn.btn.btn-xs.btn-ghost.text-lg(href='#item_1')
-            i.fas.fa-angle-double-left.fa-2x
+                                    h6.font-black
+                                        span.english-text 3. Estimating your risk will be done in only 5 steps. The progress bar will indicate which step you are in.
+                                        span.filipino-text 3. Ang pagtatantiya ay maaring makamit sa loob ng limang hakbang lamang. Nakasaad sa progress bar kung nasa aling hakbang ka na.
 
-        a#back-btn.btn.btn-xs.btn-ghost.text-lg(href='#item_1')
-            i.fas.fa-angle-left.fa-2x
+            div.carousel-item.w-full(id='slide_4')
+                .carousel-container.p-10
+                    .card.card-bordered.text-midnight-blue.shadow.mx-auto
+                        div.flex.items-center.justify-center
 
-        a.btn#num-btn.btn-xs.btn-ghost.text-lg 1
+                            .flex-col.items-center.justify-center.p-5
 
-        a#next-btn.btn.btn-xs.btn-ghost.text-lg(href='#item_2')
-            i.fas.fa-angle-right.fa-2x
+                                figure.screenshot-image
+                                    img.desktop( src='/static/images/screenshots/desktop/screenshot_4.png')
+                                    img.mobile( src='/static/images/screenshots/mobile/screenshot_4.png')
 
-        a#end-btn.btn.btn-xs.btn-ghost.text-lg(href='#item_10')
-            i.fas.fa-angle-double-right.fa-2x
+                                .card-body
 
+                                    h6.font-black
+                                        span.english-text 4. Step 1 is the activity location. Choose from the dropdown box what region the activity will take place.
+                                        span.filipino-text 4. Una ay ang lokasyon ng aktibidad. Piliin mula sa dropdown box ang rehiyon kung saan gaganapin ang aktibidad.
 
+            div.carousel-item.w-full(id='slide_5')
+                .carousel-container.p-10
+                    .card.card-bordered.text-midnight-blue.shadow.mx-auto
+                        div.flex.items-center.justify-center
 
-//-
-    .flex.flex-col.justify-center.items-center.px-20.font-sans.text-midnight-blue.pb-5.space-y-10(class='md:px-72 lg:px-96')
+                            .flex-col.items-center.justify-center.p-5
 
+                                figure.screenshot-image
+                                    img.desktop( src='/static/images/screenshots/desktop/screenshot_5.png')
+                                    img.mobile( src='/static/images/screenshots/mobile/screenshot_5.png')
 
-  .card.card-bordered.shadow
-    figure.px-10.pt-10
-      img.rounded-xl(src="/static/images/screenshots/planned activity (screenshot 5).png")
-    .card-body
-      h2.card-title
-        | Step 2 is the activity planned. Select from the choices of your planned activity during the pandemic.
-      .alert.alert-success
-        .flex-1.flex-col.space-y-5
-          button#extraDivBtn.m-1.btn  What if my planned activity is not within the available choices?
-          #extraDiv.transition-all.h-0.closed.space-y-5
-            .card.shadow.h-0.text-midnight-blue.bg-white
-              .card-body
-                h2.card-title.flex
-                  svg.w-6.h-6.mx-2(xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='#2196f3')
-                    path(stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z')
-                  |                   Creating Your Own Activity. If you create your own activity, the website will ask you more questions until it understands your custom activity.
-            .card.card-bordered.shadow.font-sans.bg-white.h-0
-              figure.px-10.pt-10
-                img.rounded-xl(src="/static/images/screenshots/activity level (screenshot 5.1).png")
-              .card-body
-                h2.card-title.text-midnight-blue
-                  | Step 2.1 is the activity level. Drag the slider to choose the intensity of your custom activity.
-            .card.card-bordered.shadow.font-sans.bg-white.h-0
-              figure.px-10.pt-10
-                img.rounded-xl(src="/static/images/screenshots/activity level (screenshot 5.2).png")
-              .card-body
-                h2.card-title.text-midnight-blue
-                  | You can go to the advanced settings if you want more specific information to be included.
-            .card.card-bordered.shadow.font-sans.bg-white.h-0
-              figure.px-10.pt-10
-                img.rounded-xl(src="/static/images/screenshots/ventilation (screenshot 6).png")
-              .card-body
-                h2.card-title.text-midnight-blue
-                  | Step 2.2 is the room ventilation. Choose the nearest or similar setting for your activity.
-            .card.card-bordered.shadow.font-sans.bg-white.h-0
-              figure.px-10.pt-10
-                img.rounded-xl(src="/static/images/screenshots/room size (screenshot 7).png")
-              .card-body
-                h2.card-title.text-midnight-blue
-                  | Step 2.3 is the room size. Enter the appropriate values in the input field.
+                                .card-body
 
-  .card.card-bordered.shadow
-    figure.px-10.pt-10
-      img.rounded-xl(src="/static/images/screenshots/time and people (screenshot 8).png")
-    .card-body
-      h2.card-title
-        | Step 3 is the time and people. Enter the appropriate values in the input fields.
-  .card.card-bordered.shadow
-    figure.px-10.pt-10
-      img.rounded-xl(src="/static/images/screenshots/masks (screenshot 9).png")
-    .card-body
-      h2.card-title
-        | Step 4 is the masks. Drag the slider to adjust the amount of people wearing masks and choose the type of mask they wear.
-  .card.card-bordered.shadow
-    figure.px-10.pt-10
-      img.rounded-xl(src="/static/images/screenshots/summary (screenshot 10).png")
-    .card-body
-      h2.card-title
-        | A summary is shown before the results. You may take this time to review and edit your results.
-  .card.card-bordered.shadow
-    figure.px-10.pt-10
-      img.rounded-xl(src="/static/images/screenshots/results (screenshot 11).png")
-    .card-body
-      h2.card-title
-        | Step 5 is the result. You are finally done!
-  .card.card-bordered.shadow
-    figure.px-10.pt-10
-      img.rounded-xl(src="/static/images/screenshots/new risk level (screenshot 12).png")
-    .card-body
-      h2.card-title
-        | You can go back and test new answers.
-  .card.shadow.text-midnight-blue.bg-white
-    .card-body
-      h2.card-title.flex
-        svg.w-6.h-6.mx-2(xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='#2196f3')
-          path(stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z')
-        | You will answer a short survey form for the improvement and betterment of the website.
+                                    h6.font-black
+                                        span.english-text 5. Step 2 is the activity planned. Select from the choices of your planned activity during the pandemic.
+                                        span.filipino-text 5. Ikalawa ay ang binabalak na aktibidad. Piliin kung aling aktibidad ang iyong nais gawin sa panahon ng pandemya.
+
+            div.carousel-item.w-full(id='slide_6')
+                .carousel-container.p-10
+                    .card.card-bordered.text-midnight-blue.shadow.mx-auto
+                        div.flex.items-center.justify-center
+
+                            .flex-col.items-center.justify-center.p-5
+
+                                figure.screenshot-image
+                                    img.desktop( src='/static/images/screenshots/desktop/screenshot_11.png')
+                                    img.mobile( src='/static/images/screenshots/mobile/screenshot_11.png')
+
+                                .card-body
+
+                                    h6.font-black
+                                        span.english-text Creating Your Own Activity. If you create your own activity, the website will ask you more questions until it understands your custom activity.
+                                        span.filipino-text Paglikha ng Sariling Aktibidad. Kung gagawa ka ng sarili mong aktibidad, magtatanong sa iyo ang website ng higit pang mga tanong hanggang sa maunawaan nito ang iyong plano.
+            div.carousel-item.w-full(id='slide_7')
+                .carousel-container.p-10
+                    .card.card-bordered.text-midnight-blue.shadow.mx-auto
+                        div.flex.items-center.justify-center
+
+                            .flex-col.items-center.justify-center.p-5
+
+                                figure.screenshot-image
+                                    img.desktop( src='/static/images/screenshots/desktop/screenshot_5.1.png')
+                                    img.mobile( src='/static/images/screenshots/mobile/screenshot_5.1.png')
+
+                                .card-body
+
+                                    h6.font-black
+                                        span.english-text 5.1 For the activity level, press the left or right button to choose the intensity of the activity. Afterward, select between silent, speaking, and loudly speaking depending on how vocal you are during the activity.
+                                        span.filipino-text 5.1. Para sa antas ng aktibidad, piliin mula sa kaliwa o kanan na mga pindutan ang tindi ng aktibidad. Pagkatapos, pumili sa pagitan ng “tahimik,” “pagsasalita,” at “malakas na pagsasalita” depende kung paano mo gagamitin ang iyong boses sa aktibidad.
+
+            div.carousel-item.w-full(id='slide_8')
+                .carousel-container.p-10
+                    .card.card-bordered.text-midnight-blue.shadow.mx-auto
+                        div.flex.items-center.justify-center
+
+                            .flex-col.items-center.justify-center.p-5
+
+                                figure.screenshot-image
+                                    img.desktop( src='/static/images/screenshots/desktop/screenshot_5.2.png')
+                                    img.mobile( src='/static/images/screenshots/mobile/screenshot_5.2.png')
+
+                                .card-body
+
+                                    h6.font-black
+                                        span.english-text 5.2 To determine the ventilation of your location to where the activity will take place, choose between the given presets of your location’s category. If you think your preferred activity is not located in the given places, kindly choose a similar location.
+                                        span.filipino-text 5.2 Upang matukoy ang bentilasyon ng iyong nakaplanong aktibidad, pumili sa mga kategorya ayon sa lokasyon ng aktibidad. Kapag ang aktibidad ay hindi matatagpuan sa mga ibinigay na lugar, mangyaring piliin ang katulad na lokasyon.
+
+            div.carousel-item.w-full(id='slide_9')
+                .carousel-container.p-10
+                    .card.card-bordered.text-midnight-blue.shadow.mx-auto
+                        div.flex.items-center.justify-center
+
+                            .flex-col.items-center.justify-center.p-5
+
+                                figure.screenshot-image
+                                    img.desktop( src='/static/images/screenshots/desktop/screenshot_5.3.png')
+                                    img.mobile( src='/static/images/screenshots/mobile/screenshot_5.3.png')
+
+                                .card-body
+
+                                    h6.font-black
+                                        span.english-text 5.3 For room size, select from the given presets the approximate size of the room based on your estimation. You may also opt to enter the specific size of the room in meters.
+                                        span.filipino-text 5.3 Pumili mula sa mga pindutan ang tinatayang sukat ng kwarto batay sa iyong pagsusuri. Maari mo ring ilagay mismo ang eksasktong sukat ng silid batay sa metro.
+
+            div.carousel-item.w-full(id='slide_10')
+                .carousel-container.p-10
+                    .card.card-bordered.text-midnight-blue.shadow.mx-auto
+                        div.flex.items-center.justify-center
+
+                            .flex-col.items-center.justify-center.p-5
+
+                                figure.screenshot-image
+                                    img.desktop( src='/static/images/screenshots/desktop/screenshot_6.png')
+                                    img.mobile( src='/static/images/screenshots/mobile/screenshot_6.png')
+
+                                .card-body
+
+                                    h6.font-black
+                                        span.english-text 6. Step 3 is the time and people. Enter the appropriate values in the input fields.
+                                        span.filipino-text 6. Ikatlo ay ang oras at mga tao. Ilagay ang mga angkop na halaga sa input field.
+
+            div.carousel-item.w-full(id='slide_11')
+                .carousel-container.p-10
+                    .card.card-bordered.text-midnight-blue.shadow.mx-auto
+                        div.flex.items-center.justify-center
+
+                            .flex-col.items-center.justify-center.p-5
+
+                                figure.screenshot-image
+                                    img.desktop( src='/static/images/screenshots/desktop/screenshot_7.png')
+                                    img.mobile( src='/static/images/screenshots/mobile/screenshot_7.png')
+
+                                .card-body
+
+                                    h6.font-black
+                                        span.english-text 7. Step 4 is the masks. Drag the slider to adjust the amount of people wearing masks and choose the type of mask they wear.
+                                        span.filipino-text 7. Ika-apat ay ang mga mask. Ipihit ang slider upang isaayos ang bilang ng mga taong may suot ng mask at piliin ang uri ng maskara na kanilang sinusuot.
+
+            div.carousel-item.w-full(id='slide_12')
+                .carousel-container.p-10
+                    .card.card-bordered.text-midnight-blue.shadow.mx-auto
+                        div.flex.items-center.justify-center
+
+                            .flex-col.items-center.justify-center.p-5
+
+                                figure.screenshot-image
+                                    img.desktop( src='/static/images/screenshots/desktop/screenshot_8.png')
+                                    img.mobile( src='/static/images/screenshots/mobile/screenshot_8.png')
+
+                                .card-body
+
+                                    h6.font-black
+                                        span.english-text 8.  A summary is shown before the results. You may take this time to review and edit your results.
+                                        span.filipino-text 8. Ikalima ay ang buod. Tingnan muli ng mabuti ang mga halaga bago ito iproseso ng estimator mula sa website.
+
+            div.carousel-item.w-full(id='slide_13')
+                .carousel-container.p-10
+                    .card.card-bordered.text-midnight-blue.shadow.mx-auto
+                        div.flex.items-center.justify-center
+
+                            .flex-col.items-center.justify-center.p-5
+
+                                figure.screenshot-image
+                                    img.desktop( src='/static/images/screenshots/desktop/screenshot_9.png')
+                                    img.mobile( src='/static/images/screenshots/mobile/screenshot_9.png')
+
+                                .card-body
+
+                                    h6.font-black
+                                        span.english-text 9. Step 5 is the result. You are finally done!
+                                        span.filipino-text 9. Ika-anim ay ang resulta. Sa wakas, tapos ka na!
+
+            div.carousel-item.w-full(id='slide_14')
+                .carousel-container.p-10
+                    .card.card-bordered.text-midnight-blue.shadow.mx-auto
+                        div.flex.items-center.justify-center
+
+                            .flex-col.items-center.justify-center.p-5
+
+                                figure.screenshot-image
+                                    img.desktop( src='/static/images/screenshots/desktop/screenshot_10.png')
+                                    img.mobile( src='/static/images/screenshots/mobile/screenshot_10.png')
+
+                                .card-body
+
+                                    h6.font-black
+                                        span.english-text 10. You may go back and test new values to observe how the risk can increase or decrease. You may also read the safety tips to remind yourself on how to decrease your transmission risk. After everything, kindly answer a short survey form for the improvement and betterment of the website.
+                                        span.filipino-text 10. Maari kang bumalik at sumubok ng iba’t ibang klase ng halaga para sa panibagong resulta ng iyong aktibidad. Matapos ang lahat, maari mo ng sagutan ang survey na inihanda ng mga mananaliksik para sa pagpapabuti ng website.
+
+        .flex.justify-center.w-full.py-2.gap-5
+
+            a#back-btn.btn.btn-xs.btn-ghost.text-lg.nav-btn(href='#slide_0')
+                i.fas.fa-angle-left.fa-2x(style="pointer-events: none;")
+
+            a.btn#num-btn.btn-xs.btn-ghost.text-lg 1
+
+            a#next-btn.btn.btn-xs.btn-ghost.text-lg.nav-btn(href='#slide_2')
+                i.fas.fa-angle-right.fa-2x(style="pointer-events: none;")
